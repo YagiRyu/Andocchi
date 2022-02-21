@@ -5,6 +5,7 @@
 ### mixiトレーニング
 
 http://mixi-inc.github.io/AndroidTraining/
+
 数年前の資料となるため、読み物としてのみ学習してください。（セットアップや実際のコード部分は最新の公式ドキュメントなどを参考にして下さい）
 
 - 1.1 Android-OSについて
@@ -34,6 +35,7 @@ https://developer.android.com/courses/kotlin-android-fundamentals/toc?hl=ja
 ### Codelab
 
 https://developer.android.com/courses/pathways/android-basics-kotlin-one?hl=ja#0
+
 こちらは任意ですが、実践的なので実施を強くお勧めします
 
 ## 課題 - あんどっち
