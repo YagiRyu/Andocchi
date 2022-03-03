@@ -106,6 +106,8 @@ android-developer-roadmap2022にあるノードのうち、特定のノードを
 - レイアウト作成は基本xml形式でお願いします。理由として、業務に必要なスキルとしてまずはxmlの知識を習得してもらいたいためです
     - メンターとメンティーですり合わせてもらってJetpackComposeを選択してもらっても良いですが、xmlをある程度使えることを前提とします
 - 開発言語としては、Kotlinを使用してください
+- Androidロボット(Droidくん)を使用しているため、以下のライセンス情報をアプリ内で表示されるようにしてください
+    - `The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.`
 
 ## 🌟以下、中級者向けの追加の要件・仕様🌟
 
