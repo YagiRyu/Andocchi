@@ -1,0 +1,1774 @@
+{
+  "paths": [
+    {
+      "id": 8,
+      "title": "Application Fundamentals",
+      "sections": [
+        {
+          "id": 9,
+          "title": "Application Fundamentals",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 3,
+              "title": "AndroidPackage",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 1,
+                  "title": "APK",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 2,
+                  "title": "AAB",
+                  "isJetpack": false,
+                  "priority": 4
+                }
+              ]
+            },
+            {
+              "id": 7,
+              "title": "Languages",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 4,
+                  "title": "Kotlin",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 5,
+                  "title": "Java",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 6,
+                  "title": "C++(JNI)",
+                  "isJetpack": false,
+                  "priority": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Android Operating System",
+      "sections": [
+        {
+          "id": 15,
+          "title": "Android Operating System",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 10,
+              "title": "Multi-User Linux",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 11,
+              "title": "File Permissions",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 12,
+              "title": "Resource Isolations",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 13,
+              "title": "Process Management",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Android Platform Architecture",
+      "sections": [
+        {
+          "id": 23,
+          "title": "Android Platform Architecture",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 16,
+              "title": "The Linux Kernel",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 17,
+              "title": "Hardware Abstraction Layer",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 18,
+              "title": "Android Runtime",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 19,
+              "title": "Native Libraries",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 20,
+              "title": "Java API Framework",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 21,
+              "title": "System Apps",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "App Manifest",
+      "sections": [
+        {
+          "id": 27,
+          "title": "App Manifest",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 24,
+              "title": "Package",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 25,
+              "title": "Application ID",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "title": "App Components",
+      "sections": [
+        {
+          "id": 37,
+          "title": "App Components",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 28,
+              "title": "Activity",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": []
+            },
+            {
+              "id": 29,
+              "title": "Service",
+              "isJetpack": false,
+              "priority": 2,
+              "childNodes": []
+            },
+            {
+              "id": 30,
+              "title": "Broadcast Receiver",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            },
+            {
+              "id": 31,
+              "title": "Content Provider",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": []
+            },
+            {
+              "id": 35,
+              "title": "Intent",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 32,
+                  "title": "Intent Filters",
+                  "isJetpack": false,
+                  "priority": 2
+                },
+                {
+                  "id": 33,
+                  "title": "Explicit Intents",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 34,
+                  "title": "Implicit Intents",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "title": "App Architecture",
+      "sections": [
+        {
+          "id": 44,
+          "title": "App Entry Points",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 42,
+              "title": "Activities",
+              "isJetpack": true,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 38,
+                  "title": "Activity Lifecycles",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 39,
+                  "title": "Activity State Changes",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 40,
+                  "title": "Task and Back Stack",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 41,
+                  "title": "Parcelables and Bundles",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 28,
+                  "title": "Activity",
+                  "isJetpack": false,
+                  "priority": 5,
+                  "childNodes": []
+                }
+              ]
+            },
+            {
+              "id": 43,
+              "title": "App Shortcuts",
+              "isJetpack": true,
+              "priority": 2,
+              "childNodes": []
+            }
+          ]
+        },
+        {
+          "id": 62,
+          "title": "App Navigation",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 49,
+              "title": "Navigation Component",
+              "isJetpack": true,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 45,
+                  "title": "Navigation Graph",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 46,
+                  "title": "Global Actions",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 47,
+                  "title": "Destinations",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 48,
+                  "title": "DeepLink",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            },
+            {
+              "id": 54,
+              "title": "Fragments",
+              "isJetpack": true,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 50,
+                  "title": "Fragment Lifecycles",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 51,
+                  "title": "Fragment State Changes",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 52,
+                  "title": "Fragment Manager",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 53,
+                  "title": "Fragment Transactions",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 55,
+                  "title": "DialogFragment",
+                  "isJetpack": false,
+                  "priority": 3,
+                  "childNodes": []
+                },
+                {
+                  "id": 56,
+                  "title": "BottomSheetDialogFragment",
+                  "isJetpack": false,
+                  "priority": 3,
+                  "childNodes": []
+                }
+              ]
+            },
+            {
+              "id": 61,
+              "title": "App Links",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 57,
+                  "title": "TabLayout",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 58,
+                  "title": "ViewPager",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 59,
+                  "title": "ViewPager2",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 60,
+                  "title": "Custom Back Navigation",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 63,
+          "title": "App Startup",
+          "isJetpack": true,
+          "nodes": []
+        },
+        {
+          "id": 64,
+          "title": "Dependency Injection",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 82,
+              "title": "Dependency Injection",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 78,
+                  "title": "Dagger",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 79,
+                  "title": "Hilt",
+                  "isJetpack": true,
+                  "priority": 5
+                },
+                {
+                  "id": 80,
+                  "title": "Koin",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 81,
+                  "title": "Kodein",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 74,
+          "title": "Architecture Components",
+          "isJetpack": true,
+          "nodes": [
+            {
+              "id": 71,
+              "title": "UI Layer",
+              "isJetpack": true,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 65,
+                  "title": "ViewBinding",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 66,
+                  "title": "DataBinding",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 67,
+                  "title": "Lifecycle",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 68,
+                  "title": "ViewModel",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 69,
+                  "title": "LiveData",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 70,
+                  "title": "Paging",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 73,
+              "title": "Data Layer",
+              "isJetpack": true,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 116,
+                  "title": "DataStore",
+                  "isJetpack": true,
+                  "priority": 4,
+                  "childNodes": []
+                },
+                {
+                  "id": 72,
+                  "title": "WorkManager",
+                  "isJetpack": true,
+                  "priority": 3,
+                  "childNodes": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "title": "Design Patterns",
+      "sections": [
+        {
+          "id": 97,
+          "title": "Design Patterns",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 76,
+              "title": "Builder Pattern",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            },
+            {
+              "id": 77,
+              "title": "Factory Pattern",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            },
+            {
+              "id": 82,
+              "title": "Dependency Injection",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 78,
+                  "title": "Dagger",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 79,
+                  "title": "Hilt",
+                  "isJetpack": true,
+                  "priority": 5
+                },
+                {
+                  "id": 80,
+                  "title": "Koin",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 81,
+                  "title": "Kodein",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 85,
+              "title": "Observer Pattern",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 83,
+                  "title": "Flow",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 84,
+                  "title": "RxJava/RxKotlin",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 69,
+                  "title": "LiveData",
+                  "isJetpack": false,
+                  "priority": 5
+                }
+              ]
+            },
+            {
+              "id": 86,
+              "title": "Repository Pattern",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": []
+            }
+          ]
+        },
+        {
+          "id": 95,
+          "title": "Architecture",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 88,
+              "title": "MVVM",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 87,
+                  "title": "Model - View - ViewModel",
+                  "isJetpack": false,
+                  "priority": 5
+                }
+              ]
+            },
+            {
+              "id": 90,
+              "title": "MVP",
+              "isJetpack": false,
+              "priority": 2,
+              "childNodes": [
+                {
+                  "id": 89,
+                  "title": "Model - View - Presenter",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            },
+            {
+              "id": 92,
+              "title": "MVVM",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 91,
+                  "title": "Model - View - Intent",
+                  "isJetpack": false,
+                  "priority": 4
+                }
+              ]
+            },
+            {
+              "id": 94,
+              "title": "MVC",
+              "isJetpack": false,
+              "priority": 2,
+              "childNodes": [
+                {
+                  "id": 93,
+                  "title": "Model - View - Controller",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "title": "Network",
+      "sections": [
+        {
+          "id": 105,
+          "title": "Network",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 99,
+              "title": "OkHttp",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 98,
+                  "title": "Interceptor",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 100,
+              "title": "Okio",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            },
+            {
+              "id": 101,
+              "title": "Retrofit",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": []
+            },
+            {
+              "id": 102,
+              "title": "Ktor",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": []
+            },
+            {
+              "id": 103,
+              "title": "Apollo-Android",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "title": "Image Loading",
+      "sections": [
+        {
+          "id": 111,
+          "title": "Image Loading",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 106,
+              "title": "Glide",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": []
+            },
+            {
+              "id": 107,
+              "title": "Fresco",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            },
+            {
+              "id": 108,
+              "title": "Coil",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": []
+            },
+            {
+              "id": 109,
+              "title": "Picasso",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "title": "Local Storage",
+      "sections": [
+        {
+          "id": 119,
+          "title": "Local Storage",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 114,
+              "title": "SQLite",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 112,
+                  "title": "Room",
+                  "isJetpack": true,
+                  "priority": 5
+                },
+                {
+                  "id": 113,
+                  "title": "SQLDelight",
+                  "isJetpack": false,
+                  "priority": 5
+                }
+              ]
+            },
+            {
+              "id": 115,
+              "title": "SharedPreferences",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": []
+            },
+            {
+              "id": 116,
+              "title": "DataStore",
+              "isJetpack": true,
+              "priority": 4,
+              "childNodes": []
+            },
+            {
+              "id": 117,
+              "title": "Realm",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "title": "Asynchronous",
+      "sections": [
+        {
+          "id": 123,
+          "title": "Asynchronous",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 120,
+              "title": "Coroutines",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": []
+            },
+            {
+              "id": 84,
+              "title": "RxJava/RxKotlin",
+              "isJetpack": false,
+              "priority": 4
+            },
+            {
+              "id": 121,
+              "title": "Thread",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": []
+            },
+            {
+              "id": 72,
+              "title": "WorkManager",
+              "isJetpack": true,
+              "priority": 3,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 208,
+      "title": "User Interface",
+      "sections": [
+        {
+          "id": 209,
+          "title": "User Interface",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 129,
+              "title": "Layouts",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 124,
+                  "title": "ConstraintLayout",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 125,
+                  "title": "MotionLayout",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 126,
+                  "title": "LinearLayout",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 127,
+                  "title": "FrameLayout",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 128,
+                  "title": "RecyclerView",
+                  "isJetpack": false,
+                  "priority": 5
+                }
+              ]
+            },
+            {
+              "id": 133,
+              "title": "Design Guides",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 130,
+                  "title": "Material",
+                  "isJetpack": true,
+                  "priority": 4
+                },
+                {
+                  "id": 131,
+                  "title": "Material You",
+                  "isJetpack": true,
+                  "priority": 3
+                },
+                {
+                  "id": 132,
+                  "title": "Neumorphism",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            },
+            {
+              "id": 136,
+              "title": "Styles",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 134,
+                  "title": "Light Theme",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 135,
+                  "title": "Dark Theme",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 140,
+              "title": "Message",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 137,
+                  "title": "Toast",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 138,
+                  "title": "Snackbar",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 139,
+                  "title": "Notification",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 145,
+              "title": "Animation",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 141,
+                  "title": "ValueAnimator",
+                  "isJetpack": false,
+                  "priority": 2
+                },
+                {
+                  "id": 142,
+                  "title": "ObjectAnimator",
+                  "isJetpack": false,
+                  "priority": 2
+                },
+                {
+                  "id": 143,
+                  "title": "Lottie",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 144,
+                  "title": "Material Motion",
+                  "isJetpack": true,
+                  "priority": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 207,
+          "title": "Compose UI",
+          "isJetpack": true,
+          "nodes": [
+            {
+              "id": 147,
+              "title": "Recomposition",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 146,
+                  "title": "Snapshot",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            },
+            {
+              "id": 152,
+              "title": "State",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 148,
+                  "title": "MutableState",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 149,
+                  "title": "remember",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 150,
+                  "title": "rememberSaveable",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 151,
+                  "title": "State Hoisting",
+                  "isJetpack": false,
+                  "priority": 5,
+                  "childNodes": []
+                }
+              ]
+            },
+            {
+              "id": 158,
+              "title": "Side-effects",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 153,
+                  "title": "LaunchedEffect",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 154,
+                  "title": "DisposableEffect",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 155,
+                  "title": "ProduceState",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 156,
+                  "title": "derivedStateOf",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 157,
+                  "title": "snapshotFlow",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 167,
+              "title": "Theming",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 162,
+                  "title": "Material",
+                  "isJetpack": false,
+                  "priority": 4,
+                  "childNodes": [
+                    {
+                      "id": 159,
+                      "title": "Color",
+                      "isJetpack": false,
+                      "priority": 5
+                    },
+                    {
+                      "id": 160,
+                      "title": "Typography",
+                      "isJetpack": false,
+                      "priority": 3
+                    },
+                    {
+                      "id": 161,
+                      "title": "Shape",
+                      "isJetpack": false,
+                      "priority": 4
+                    }
+                  ]
+                },
+                {
+                  "id": 166,
+                  "title": "Custom",
+                  "isJetpack": false,
+                  "priority": 3,
+                  "childNodes": [
+                    {
+                      "id": 163,
+                      "title": "Dimens",
+                      "isJetpack": false,
+                      "priority": 3
+                    },
+                    {
+                      "id": 164,
+                      "title": "Factories",
+                      "isJetpack": false,
+                      "priority": 3
+                    },
+                    {
+                      "id": 165,
+                      "title": "Data",
+                      "isJetpack": false,
+                      "priority": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 171,
+              "title": "Modifier",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 168,
+                  "title": "Modifier Order",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 169,
+                  "title": "Chaining",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 170,
+                  "title": "Composed Modifier",
+                  "isJetpack": false,
+                  "priority": 5
+                }
+              ]
+            },
+            {
+              "id": 175,
+              "title": "Layout",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 172,
+                  "title": "Column",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 173,
+                  "title": "Row",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 174,
+                  "title": "Box",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 124,
+                  "title": "ConstraintLayout",
+                  "isJetpack": false,
+                  "priority": 5
+                }
+              ]
+            },
+            {
+              "id": 180,
+              "title": "List",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 176,
+                  "title": "LazyColumn",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 177,
+                  "title": "LazyRow",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 178,
+                  "title": "LazyVerticalGrid",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 179,
+                  "title": "LazyPagingItems",
+                  "isJetpack": false,
+                  "priority": 4
+                }
+              ]
+            },
+            {
+              "id": 185,
+              "title": "Image",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 183,
+                  "title": "Icon",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 184,
+                  "title": "Image",
+                  "isJetpack": false,
+                  "priority": 4,
+                  "childNodes": [
+                    {
+                      "id": 181,
+                      "title": "coil-compose",
+                      "isJetpack": false,
+                      "priority": 4
+                    },
+                    {
+                      "id": 182,
+                      "title": "Landscapist",
+                      "isJetpack": false,
+                      "priority": 4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 189,
+              "title": "Text",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 186,
+                  "title": "TextField",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 187,
+                  "title": "OutlinedTextField",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 188,
+                  "title": "ClickableText",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 192,
+              "title": "Graphics",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 190,
+                  "title": "Surface",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 191,
+                  "title": "Canvas",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 197,
+              "title": "Animation",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 193,
+                  "title": "AnimatedVisibility",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 194,
+                  "title": "MutableTransitionState",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 195,
+                  "title": "AnimatedContent",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 196,
+                  "title": "Crossfade",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 202,
+              "title": "Gestures",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 198,
+                  "title": "Scrolling",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 199,
+                  "title": "Dragging",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 200,
+                  "title": "Swiping",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 201,
+                  "title": "Zooming",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            },
+            {
+              "id": 206,
+              "title": "CompositionLocal",
+              "isJetpack": false,
+              "priority": 5,
+              "childNodes": [
+                {
+                  "id": 203,
+                  "title": "CompositionLocalProvider",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 204,
+                  "title": "compositionLocalOf",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 205,
+                  "title": "staticCompositionLocalOf",
+                  "isJetpack": false,
+                  "priority": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 223,
+      "title": "Service",
+      "sections": [
+        {
+          "id": 224,
+          "title": "Service",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 211,
+              "title": "Google",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 209,
+                  "title": "Google Play Services",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 210,
+                  "title": "Google Maps",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            },
+            {
+              "id": 218,
+              "title": "Firebase",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": [
+                {
+                  "id": 212,
+                  "title": "Authentication",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 213,
+                  "title": "Crashlytics",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 214,
+                  "title": "Remote Config",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 215,
+                  "title": "Cloud Messaging",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 216,
+                  "title": "FireStore",
+                  "isJetpack": false,
+                  "priority": 3
+                },
+                {
+                  "id": 217,
+                  "title": "Realtime Database",
+                  "isJetpack": false,
+                  "priority": 2
+                }
+              ]
+            },
+            {
+              "id": 222,
+              "title": "Advertisement",
+              "isJetpack": false,
+              "priority": 1,
+              "childNodes": [
+                {
+                  "id": 219,
+                  "title": "Google AdMob",
+                  "isJetpack": false,
+                  "priority": 2
+                },
+                {
+                  "id": 220,
+                  "title": "MoPub",
+                  "isJetpack": false,
+                  "priority": 1
+                },
+                {
+                  "id": 221,
+                  "title": "Meta Audience Network",
+                  "isJetpack": false,
+                  "priority": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 244,
+      "title": "Code Analysis & Test",
+      "sections": [
+        {
+          "id": 245,
+          "title": "Code Analysis & Test",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 228,
+              "title": "Linter",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 225,
+                  "title": "Ktlint",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 226,
+                  "title": "Detekt",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 227,
+                  "title": "Android Lint",
+                  "isJetpack": false,
+                  "priority": 4
+                }
+              ]
+            },
+            {
+              "id": 233,
+              "title": "Debugger",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 229,
+                  "title": "Timber",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 230,
+                  "title": "LeakCanary",
+                  "isJetpack": false,
+                  "priority": 5
+                },
+                {
+                  "id": 231,
+                  "title": "Stetho",
+                  "isJetpack": false,
+                  "priority": 4
+                },
+                {
+                  "id": 232,
+                  "title": "Chucker",
+                  "isJetpack": false,
+                  "priority": 3
+                }
+              ]
+            },
+            {
+              "id": 242,
+              "title": "Unit Testing",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": [
+                {
+                  "id": 237,
+                  "title": "Unit Test",
+                  "isJetpack": false,
+                  "priority": 4,
+                  "childNodes": [
+                    {
+                      "id": 234,
+                      "title": "JUnit",
+                      "isJetpack": false,
+                      "priority": 4
+                    },
+                    {
+                      "id": 235,
+                      "title": "Kluent",
+                      "isJetpack": false,
+                      "priority": 4
+                    },
+                    {
+                      "id": 236,
+                      "title": "MockK",
+                      "isJetpack": false,
+                      "priority": 4
+                    }
+                  ]
+                },
+                {
+                  "id": 241,
+                  "title": "Android Test",
+                  "isJetpack": false,
+                  "priority": 3,
+                  "childNodes": [
+                    {
+                      "id": 238,
+                      "title": "Robolectric",
+                      "isJetpack": false,
+                      "priority": 4
+                    },
+                    {
+                      "id": 239,
+                      "title": "Espresso",
+                      "isJetpack": false,
+                      "priority": 3
+                    },
+                    {
+                      "id": 240,
+                      "title": "Kaspresso",
+                      "isJetpack": false,
+                      "priority": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 243,
+              "title": "Benchmark",
+              "isJetpack": true,
+              "priority": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 251,
+      "title": "CI/CD",
+      "sections": [
+        {
+          "id": 252,
+          "title": "CI/CD",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 246,
+              "title": "Github Actions",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": []
+            },
+            {
+              "id": 247,
+              "title": "Jenkins",
+              "isJetpack": false,
+              "priority": 2,
+              "childNodes": []
+            },
+            {
+              "id": 248,
+              "title": "Travis CI",
+              "isJetpack": false,
+              "priority": 2,
+              "childNodes": []
+            },
+            {
+              "id": 249,
+              "title": "Circle CI",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            },
+            {
+              "id": 250,
+              "title": "Bitrise",
+              "isJetpack": false,
+              "priority": 3,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 255,
+      "title": "QA & App Publishing",
+      "sections": [
+        {
+          "id": 256,
+          "title": "QA & App Publishing",
+          "isJetpack": false,
+          "nodes": [
+            {
+              "id": 253,
+              "title": "Firebase App Distribution",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": []
+            },
+            {
+              "id": 254,
+              "title": "Google Play Store",
+              "isJetpack": false,
+              "priority": 4,
+              "childNodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

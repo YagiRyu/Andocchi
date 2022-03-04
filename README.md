@@ -70,7 +70,7 @@ android-developer-roadmap2022にあるノードのうち、特定のノードを
 
 - あんどっち表示画面にダイアログ形式で被せて表示しても良いですし、ノード一覧画面に選択できる機能を持たせても問題ありません
 - 特定のノードを選択することで、習得できるようにしてください。
-- 習得したノードはあんどっち表示画面でも表示されるようにしてください
+- 習得したノードはあんどっち表示画面でも表示してください
 - 習得したノードはSharedPreferencesに保存&参照ができるようにしてください
 
 ### 機能仕様
@@ -102,10 +102,12 @@ android-developer-roadmap2022にあるノードのうち、特定のノードを
 
 ### 補足事項
 
-- あんどっちの画像リソースとandroid-developer-roadmap2022.jsonについては、本リポジトリのassetディレクトリ内に格納されているものを使用してください
+- あんどっちの画像リソースとandroid-developer-roadmap2022.jsonについては、本リポジトリのassetsディレクトリ内に格納されているものを使用してください
 - レイアウト作成は基本xml形式でお願いします。理由として、業務に必要なスキルとしてまずはxmlの知識を習得してもらいたいためです
     - メンターとメンティーですり合わせてもらってJetpackComposeを選択してもらっても良いですが、xmlをある程度使えることを前提とします
 - 開発言語としては、Kotlinを使用してください
+- Androidロボット(Droidくん)を使用しているため、以下のライセンス情報をアプリ内で表示してください
+    - `The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.`
 
 ## 🌟以下、中級者向けの追加の要件・仕様🌟
 
