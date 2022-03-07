@@ -2,9 +2,12 @@ package com.github.ryu.andocchi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import com.github.ryu.andocchi.ui.HomeFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         val navController = Navigation.findNavController(this, R.id.activity_main_nav_host_fragment)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.activity_main_bottom_navigation_view)
+
+        val appBar = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBar)
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.activity_main_nav_host_fragment).navigateUp()
     }
 }
