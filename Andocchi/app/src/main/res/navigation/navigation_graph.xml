@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/nav_home"
+    android:id="@+id/navigation_graph">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.github.ryu.andocchi.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_skill"
+        android:name="com.github.ryu.andocchi.ui.GetSkillFragment"
+        android:label="fragment_get_skill"
+        tools:layout="@layout/fragment_get_skill" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.github.ryu.andocchi.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
