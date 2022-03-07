@@ -1,7 +1,7 @@
 package com.github.ryu.andocchi.model
 
 data class AndroidDeveloperRoadmap(
-    val paths: Path?
+    val paths: List<Path>?
 )
 
 data class Path(

@@ -17,7 +17,16 @@
         tools:layout="@layout/fragment_get_skill" />
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.github.ryu.andocchi.ui.ProfileFragment"
+        android:name="com.github.ryu.andocchi.ui.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_nav_profile_to_profileEditFragment"
+            app:destination="@id/profileEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.github.ryu.andocchi.ui.profile.ProfileEditFragment"
+        android:label="fragment_profile_edit"
+        tools:layout="@layout/fragment_profile_edit" />
 </navigation>
