@@ -5,22 +5,22 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.github.ryu.andocchi.model.Path
 import com.github.ryu.andocchi.repository.HomeRepository
-import com.github.ryu.andocchi.utils.Future
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val repository: HomeRepository) : ViewModel() {
 
-//    private val _roadMapList = MutableLiveData<AndroidDeveloperRoadmap>(Future.Proceeding)
-//    val roadMap: LiveData<Future<AndroidDeveloperRoadmap>> = _roadMapList
+    private val _paths = MutableLiveData<List<Path>?>(emptyList())
+    val paths: LiveData<List<Path>?> = _paths
 
-//    private val _roadMapList = MutableLiveData<List<Article>>(emptyList())
-//    val roadMap: LiveData<List<Article>> = _roadMapList
+    private val _title = MutableLiveData<String?>("")
+    val title: LiveData<String?> = _title
 
     init {
         fetchRoadMap()
@@ -28,12 +28,11 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
 
     fun fetchRoadMap() {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.fetchRoadMap()
             try {
                 val response = repository.fetchRoadMap()
                 response?.let {
-                    val section = response[0].sections?.get(0)?.nodes?.get(0)?.childNodes?.get(0)
-                    Log.d("hello", "fetchRoadMap: ${section}")
+                    _paths.postValue(response)
+                    delay(1000L)
                 }
             } catch (e: Throwable) {
                 Log.d("error", "fetchRoadMap: $e")

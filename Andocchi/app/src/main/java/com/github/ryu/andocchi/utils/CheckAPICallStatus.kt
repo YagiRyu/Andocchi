@@ -37,7 +37,6 @@ suspend fun <T> retryOrNull(
         try {
             return block()
         } catch (e: CancellationException) {
-            // キャンセル時は再スローする
             throw e
         } catch (e: Throwable) {
             delay(intervalMills)
