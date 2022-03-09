@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.github.ryu.andocchi.viewmodel.skill_index.SectionHomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="65dp">
+<!--        <androidx.cardview.widget.CardView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:id="@+id/section_desc"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:layout_constraintBottom_toTopOf="@id/container_section_item_recycler_view"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:cardCornerRadius="16dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:cardElevation="8dp">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;            <androidx.constraintlayout.widget.ConstraintLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:id="@+id/section_skill_item_constraint"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:background="@color/purple_200">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:text="@string/priority_n_priority_5"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:textColor="@color/white"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:fontFamily="@font/rounded1c_bold"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:textSize="18sp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:textAppearance="@style/TextAppearance.AppCompat.Large"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    app:layout_constraintBottom_toTopOf="parent"/>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;            </androidx.constraintlayout.widget.ConstraintLayout>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </androidx.cardview.widget.CardView>-->
+<!--        &lt;!&ndash;&ndash;&gt;-->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/container_section_item_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

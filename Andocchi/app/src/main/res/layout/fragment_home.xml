@@ -9,12 +9,13 @@
 <!--            type="com.github.ryu.andocchi.adapter.BaseAdapter" />-->
         <variable
             name="viewmodel"
-            type="com.github.ryu.andocchi.viewmodel.HomeViewModel" />
+            type="com.github.ryu.andocchi.viewmodel.skill_index.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"

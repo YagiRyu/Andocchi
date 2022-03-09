@@ -7,26 +7,68 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.github.ryu.andocchi.ui.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.github.ryu.andocchi.ui.skill_index.HomeFragment"
+        android:label="HOME"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_sectionHomeFragment"
+            app:destination="@id/sectionHomeFragment"
+            app:enterAnim="@animator/nav_ios_enter_anim"
+            app:exitAnim="@animator/nav_ios_exit_anim"
+            app:popEnterAnim="@animator/nav_ios_pop_enter_anim"
+            app:popExitAnim="@animator/nav_ios_pop_exit_anim"/>
+    </fragment>
     <fragment
         android:id="@+id/nav_skill"
         android:name="com.github.ryu.andocchi.ui.GetSkillFragment"
-        android:label="fragment_get_skill"
+        android:label="SKILL"
         tools:layout="@layout/fragment_get_skill" />
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.github.ryu.andocchi.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="PROFILE"
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_nav_profile_to_profileEditFragment"
-            app:destination="@id/profileEditFragment" />
+            app:destination="@id/profileEditFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@animator/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/profileEditFragment"
         android:name="com.github.ryu.andocchi.ui.profile.ProfileEditFragment"
-        android:label="fragment_profile_edit"
+        android:label="EDIT"
         tools:layout="@layout/fragment_profile_edit" />
+    <fragment
+        android:id="@+id/sectionHomeFragment"
+        android:name="com.github.ryu.andocchi.ui.skill_index.SectionHomeFragment"
+        android:label="HOME">
+
+        <argument
+            android:name="json_position_number"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_sectionHomeFragment_to_nodeHomeFragment"
+            app:destination="@id/nodeHomeFragment"
+            app:enterAnim="@animator/nav_ios_enter_anim"
+            app:exitAnim="@animator/nav_ios_exit_anim"
+            app:popEnterAnim="@animator/nav_ios_pop_enter_anim"
+            app:popExitAnim="@animator/nav_ios_pop_exit_anim"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nodeHomeFragment"
+        android:name="com.github.ryu.andocchi.ui.skill_index.NodeHomeFragment"
+        android:label="HOME">
+
+        <argument
+            android:name="json_position_number"
+            app:argType="integer" />
+
+        <argument
+            android:name="json_position_node_number"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>

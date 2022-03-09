@@ -15,17 +15,19 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("UseCompatLoadingForDrawables")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        findViewById<ConstraintLayout>(R.id.constraint).background = getDrawable(R.color.black)
-
         val navController = Navigation.findNavController(this, R.id.activity_main_nav_host_fragment)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.activity_main_bottom_navigation_view)
 
+        // AppBarConfigurationの引数に渡したIDのFragmentは、toolbarに戻るボタンを表示させない
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_profile, R.id.nav_home, R.id.nav_skill))
+
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {

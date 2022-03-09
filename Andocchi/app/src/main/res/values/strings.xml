@@ -8,4 +8,5 @@
     <string name="lv">Lv.</string>
     <string name="andocchi_image_desc">Andocchi Image</string>
     <string name="change_name">名前を変更する</string>
+    <string name="priority_n_priority_5">Priorityの数値が高いほど、優先して習得するべきスキルです！\nまずは、Priority 5のスキルから習得していきましょう！</string>
 </resources>
