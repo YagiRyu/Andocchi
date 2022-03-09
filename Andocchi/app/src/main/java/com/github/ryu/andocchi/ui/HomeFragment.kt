@@ -7,14 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.ryu.andocchi.R
+import com.github.ryu.andocchi.adapter.SkillItemAdapter
 import com.github.ryu.andocchi.databinding.FragmentHomeBinding
-import com.github.ryu.andocchi.utils.Future
+import com.github.ryu.andocchi.model.Path
 import com.github.ryu.andocchi.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -26,16 +33,12 @@ class HomeFragment : Fragment() {
 
     private val viewModel: HomeViewModel by viewModels()
 
+    val list = arrayListOf("heelo", "gogo", "imamd", "hello")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        var layoutManager = LinearLayoutManager(activity)
-//        var viewAdapter = SkillViewAdapter()
-//
-//        this.recyclerView = binding.containerRecyclerView.also {
-//            it.layoutManager = layoutManager
-//            it.adapter = viewAdapter
-//        }
+        activity?.title = "スキル一覧"
     }
 
     override fun onCreateView(
@@ -47,27 +50,18 @@ class HomeFragment : Fragment() {
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
 
-//        viewModel.fetchRoadMap()
+        viewModel.paths.observe(viewLifecycleOwner, Observer {
+            val recyclerView = binding.containerRecyclerView
+            val linearLayoutManager = LinearLayoutManager(view?.context)
+            val adapter = SkillItemAdapter(viewModel.paths.value!!)
+
+            recyclerView.layoutManager = linearLayoutManager
+            recyclerView.adapter = adapter
+
+            recyclerView.addItemDecoration(DividerItemDecoration(view?.context, linearLayoutManager.orientation))
+        })
 
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-//        viewModel.roadMap.observe(viewLifecycleOwner) {
-//            when (it) {
-//                is Future.Proceeding -> {
-//                    Log.d("hello", "onViewCreated: start")
-//                }
-//                is Future.Success -> {
-//                    Log.d("hello", "onViewCreated: ${viewModel.roadMapList.value}")
-//                }
-//                is Future.Failure -> {
-//                    Log.d("hello", "onViewCreated: failure")
-//                }
-//            }
-//        }
     }
 
     override fun onDestroyView() {

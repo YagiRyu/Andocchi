@@ -1,44 +1,36 @@
 package com.github.ryu.andocchi.adapter
 
-import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
+import android.widget.AdapterView
+import android.widget.TextView
+import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
+import com.github.ryu.andocchi.R
+import com.github.ryu.andocchi.databinding.SkillItemBinding
+import com.github.ryu.andocchi.model.Path
 
-abstract class BaseAdapter<BINDING : ViewDataBinding, T : ListAdapterItem>(
-    var data: List<T>
-) : RecyclerView.Adapter<SkillItemViewHolder<BINDING>>() {
+class SkillItemAdapter(
+    private val list: List<Path>,
+) : RecyclerView.Adapter<SkillItemAdapter.SkillItemViewHolder>() {
 
-    @get:LayoutRes
-    abstract val layoutId: Int
-
-    abstract fun bind(binding: BINDING, item: T)
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun updateData(list: List<T>) {
-        this.data = list
-        notifyDataSetChanged()
+    class SkillItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val title: TextView = itemView.findViewById(R.id.skill_item)
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): SkillItemViewHolder<BINDING> {
-        val binder = DataBindingUtil.inflate<BINDING>(
-            LayoutInflater.from(parent.context),
-            layoutId,
-            parent,
-            false
-        )
-        return SkillItemViewHolder(binder)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SkillItemViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val view = inflater.inflate(R.layout.skill_item, parent, false)
+        return SkillItemViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: SkillItemViewHolder<BINDING>, position: Int) {
-        bind(holder.binder, data[position])
+    override fun onBindViewHolder(holder: SkillItemViewHolder, position: Int) {
+        val skill = list[position]
+
+        holder.title.text = skill.title
     }
 
-    override fun getItemCount() = data.size
+    override fun getItemCount() = list.size
 }
