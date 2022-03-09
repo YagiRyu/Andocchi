@@ -4,12 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/gradient_color.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/is_jetpack_gradient_color.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/priority_four_gradient.xml" value="0.1205" />
+        <entry key="app/src/main/res/drawable/priority_one_gradient.xml" value="0.1205" />
+        <entry key="app/src/main/res/drawable/priority_three_gradient.xml" value="0.1205" />
+        <entry key="app/src/main/res/drawable/priority_two_gradient.xml" value="0.1205" />
+        <entry key="app/src/main/res/drawable/section_gradient_color.xml" value="0.1235" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21693840579710144" />
         <entry key="app/src/main/res/layout/fragment_get_skill.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_node_home.xml" value="0.266304347826087" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_section_home.xml" value="0.266304347826087" />
         <entry key="app/src/main/res/layout/gradient_color.xml" value="0.266304347826087" />
+        <entry key="app/src/main/res/layout/node_skill_item.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/section_skill_item.xml" value="0.2" />
         <entry key="app/src/main/res/layout/skill_item.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/menu/menu_nav.xml" value="0.2" />
       </map>

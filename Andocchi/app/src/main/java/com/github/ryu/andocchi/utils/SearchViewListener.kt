@@ -1,8 +1,5 @@
 package com.github.ryu.andocchi.utils
 
-import androidx.appcompat.widget.SearchView
-import com.github.ryu.andocchi.viewmodel.HomeViewModel
-
 //class SearchViewListener(val viewModel: HomeViewModel): SearchView.OnQueryTextListener {
 //
 //    // 文字が実行されたタイミングで実行する
