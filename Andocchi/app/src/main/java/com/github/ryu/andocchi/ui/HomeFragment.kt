@@ -58,7 +58,6 @@ class HomeFragment : Fragment() {
             recyclerView.layoutManager = linearLayoutManager
             recyclerView.adapter = adapter
 
-            recyclerView.addItemDecoration(DividerItemDecoration(view?.context, linearLayoutManager.orientation))
         })
 
         return binding.root
