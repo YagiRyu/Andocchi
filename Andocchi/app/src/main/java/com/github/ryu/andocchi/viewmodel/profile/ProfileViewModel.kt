@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(private val repository: UserRepository) : ViewModel() {
-    private val _userName = MutableLiveData<String>("Hello")
+    private val _userName = MutableLiveData<String>("Andocchi")
     val userName: LiveData<String> = _userName
 
     private val _userLevel = MutableLiveData(0)
