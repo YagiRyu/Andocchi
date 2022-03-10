@@ -16,4 +16,7 @@ interface UserDao {
 
     @Query("SELECT * FROM user_table")
     suspend fun fetchUserName(): User
+
+//    @Query("SELECT * FROM user_table SET name=:name WHERE name=:old")
+//    fun updateUserName(name: String, old: String)
 }
