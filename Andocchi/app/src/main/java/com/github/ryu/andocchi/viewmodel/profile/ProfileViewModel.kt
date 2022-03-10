@@ -1,10 +1,14 @@
-package com.github.ryu.andocchi.viewmodel
+package com.github.ryu.andocchi.viewmodel.profile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.github.ryu.andocchi.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class ProfileViewModel : ViewModel() {
+@HiltViewModel
+class ProfileViewModel @Inject constructor(private val repository: UserRepository) : ViewModel() {
     private val _userName = MutableLiveData<String>("Hello")
     val userName: LiveData<String> = _userName
 

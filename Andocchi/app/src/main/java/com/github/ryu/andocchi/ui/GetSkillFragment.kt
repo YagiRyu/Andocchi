@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.room.Room
 import com.github.ryu.andocchi.R
 import com.github.ryu.andocchi.data.UserDatabase
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GetSkillFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

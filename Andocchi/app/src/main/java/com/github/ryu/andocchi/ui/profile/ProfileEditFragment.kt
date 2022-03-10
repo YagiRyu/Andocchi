@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.github.ryu.andocchi.R
 import com.github.ryu.andocchi.databinding.FragmentProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileEditFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
