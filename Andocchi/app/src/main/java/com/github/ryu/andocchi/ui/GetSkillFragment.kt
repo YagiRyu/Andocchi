@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.room.Room
 import com.github.ryu.andocchi.R
+import com.github.ryu.andocchi.data.UserDatabase
 
 class GetSkillFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        activity?.actionBar?.title = "スキル取得"
     }
 
     override fun onCreateView(
