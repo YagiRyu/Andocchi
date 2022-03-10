@@ -1,7 +1,9 @@
 package com.github.ryu.andocchi.di
 
+import com.github.ryu.andocchi.data.UserDao
 import com.github.ryu.andocchi.network.RoadMapService
 import com.github.ryu.andocchi.repository.HomeRepository
+import com.github.ryu.andocchi.repository.UserRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,4 +16,9 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun provideHomeRepository(service: RoadMapService) = HomeRepository(service)
+
+    @Singleton
+    @Provides
+    fun provideUserRepository(dao: UserDao) = UserRepository(dao)
+
 }

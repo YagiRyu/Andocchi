@@ -1,22 +1,17 @@
 package com.github.ryu.andocchi.ui.profile
 
-import android.app.ActionBar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.github.ryu.andocchi.R
 import com.github.ryu.andocchi.databinding.FragmentProfileBinding
-import com.github.ryu.andocchi.viewmodel.ProfileViewModel
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.github.ryu.andocchi.viewmodel.profile.ProfileViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
