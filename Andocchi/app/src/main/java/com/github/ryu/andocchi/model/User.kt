@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class User(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: Int?,
+    val id: Int,
 
     @ColumnInfo(name = "name")
     val name: String,
@@ -17,17 +17,17 @@ data class User(
     val level: Int,
 
     @ColumnInfo(name = "skill_list")
-    val skillList: MutableList<Int>,
+    val skillList: MutableList<String>,
 
     @ColumnInfo(name = "memo")
-    val memo: String,
-
-    @ColumnInfo(name = "section")
-    val sections: List<String>,
-
-    @ColumnInfo(name = "node")
-    val nodes: List<String>,
-
-    @ColumnInfo(name = "child_node")
-    val child_nodes: List<String>
+    val memo: String?,
+//
+//    @ColumnInfo(name = "section")
+//    val sections: List<String>,
+//
+//    @ColumnInfo(name = "node")
+//    val nodes: List<String>,
+//
+//    @ColumnInfo(name = "child_node")
+//    val child_nodes: List<String>
 )
