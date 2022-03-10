@@ -1,13 +1,12 @@
 package com.github.ryu.andocchi.viewmodel.profile
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.github.ryu.andocchi.model.User
 import com.github.ryu.andocchi.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -40,6 +39,8 @@ class ProfileEditViewModel @Inject constructor(private val repository: UserRepos
     }
 
     fun updateUserInfo() {
-        Log.d("Hello", "updateUserInfo: ${editText.value}")
+        viewModelScope.launch(Dispatchers.Default) {
+            repository.updateUserInfo(_editText.value.toString())
+        }
     }
 }

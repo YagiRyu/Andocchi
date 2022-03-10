@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.github.ryu.andocchi.R
 import com.github.ryu.andocchi.databinding.FragmentProfileBinding
 import com.github.ryu.andocchi.viewmodel.profile.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,6 +34,8 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.waitUntilChangedUserName()
 
         binding.goEditButton.setOnClickListener {
             val action = ProfileFragmentDirections.actionNavProfileToProfileEditFragment()

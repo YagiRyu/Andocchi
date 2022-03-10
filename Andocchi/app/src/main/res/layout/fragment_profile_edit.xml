@@ -23,31 +23,34 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/edit_text" />
+            app:layout_constraintBottom_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/edit_text"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="@{viewmodel.editText}"
-            android:hint="@string/change_name"
-            android:inputType="text"
+        <LinearLayout
+            android:id="@+id/edit_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toTopOf="parent">
 
-        <Button
-            android:id="@+id/edit_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/change_name"
-            android:enabled="@{viewmodel.enabled}"
-            android:onClick="@{() -> viewmodel.updateUserInfo()}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit_text" />
+            <EditText
+                android:id="@+id/edit_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.editText}"
+                android:hint="@string/change_name"
+                android:inputType="text"
+                />
+
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="@{viewmodel.enabled}"
+                android:text="@string/change_name" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

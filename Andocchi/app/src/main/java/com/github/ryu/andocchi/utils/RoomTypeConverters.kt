@@ -8,11 +8,11 @@ class RoomTypeConverters {
 
         @TypeConverter
         @JvmStatic
-        fun MutableList<Int>.toCsvString(): String = joinToString(",")
+        fun toCsvString(list: MutableList<Int>): String = list.joinToString(",")
 
         @TypeConverter
         @JvmStatic
-        fun String.toList(): MutableList<Int> = split(",").map { it.toInt() }.toMutableList()
+        fun toList(skillList: String): MutableList<Int> = skillList.split(",").map { it.toInt() }.toMutableList()
 
         @JvmStatic
         @TypeConverter
