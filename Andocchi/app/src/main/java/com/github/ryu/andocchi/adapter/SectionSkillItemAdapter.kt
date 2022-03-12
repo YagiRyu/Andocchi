@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.github.ryu.andocchi.BR
 import com.github.ryu.andocchi.R
 import com.github.ryu.andocchi.model.ChildNode
 import com.github.ryu.andocchi.model.Node
@@ -52,9 +53,6 @@ class SectionSkillItemAdapter(
             listener.onItemClickListener(it, position, list[position].title.toString())
         }
 
-//        if (skill.isJetpack!!) {
-//            holder.cardView.setBackgroundResource(R.drawable.is_jetpack_gradient_color)
-//        }
     }
 
     override fun getItemCount() = list.size

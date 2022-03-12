@@ -27,7 +27,7 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
         fetchRoadMap()
     }
 
-    private fun fetchRoadMap() {
+    fun fetchRoadMap() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = repository.fetchRoadMap()

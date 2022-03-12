@@ -21,10 +21,16 @@ class ProfileViewModel @Inject constructor(private val repository: UserRepositor
     private val _userLevel = MutableLiveData(0)
     val userLevel: LiveData<Int> = _userLevel
 
-    val skillList: MutableList<String> = mutableListOf()
-    private val USER = User(id = 1, name = "Androcchi", level = 1, memo = null, skillList = skillList)
+    companion object {
+        private val skillList: MutableList<String> = mutableListOf()
+        private val USER = User(id = 1, name = "Androcchi", level = 1, memo = null, skillList = skillList)
+    }
 
     init {
+        setUserNameAndUserLevel()
+    }
+
+    private fun setUserNameAndUserLevel() {
         viewModelScope.launch(Dispatchers.Default) {
             if (repository.fetchUserName().isEmpty()) {
                 repository.insertUserInfo(USER)

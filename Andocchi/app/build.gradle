@@ -84,4 +84,10 @@ dependencies {
 
     // recycler view
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    // Epoxy
+    def epoxy_version = "3.11.0"
+    implementation "com.airbnb.android:epoxy:$epoxy_version"
+    implementation "com.airbnb.android:epoxy-databinding:${epoxy_version}"
+    kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
 }
