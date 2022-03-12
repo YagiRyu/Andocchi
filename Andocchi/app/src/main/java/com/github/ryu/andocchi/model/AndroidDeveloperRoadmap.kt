@@ -33,3 +33,8 @@ data class ChildNode(
     val isJetpack: Boolean?,
     val priority: Int?
 )
+
+data class Item(
+    val title: String,
+    val nodes: List<Node>
+)
