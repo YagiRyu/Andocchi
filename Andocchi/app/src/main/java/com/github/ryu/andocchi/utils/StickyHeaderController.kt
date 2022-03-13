@@ -1,22 +1,12 @@
 package com.github.ryu.andocchi.utils
 
 import com.airbnb.epoxy.Typed2EpoxyController
-import com.github.ryu.andocchi.ItemSectionListBindingModel_
-import com.github.ryu.andocchi.itemChildNodeList
-import com.github.ryu.andocchi.itemNodeList
+import com.github.ryu.andocchi.*
 import com.github.ryu.andocchi.model.Path
 
-class StickyHeaderController() : Typed2EpoxyController<List<Path>, List<Path>>() {
-
-    lateinit var listener: OnClickListener
-
-    interface OnClickListener {
-        fun onSelected(id: Int)
-    }
-
-    fun click(listener: OnClickListener) {
-        this.listener = listener
-    }
+class StickyHeaderController(
+    private val onClick: (position: Int) -> Unit
+) : Typed2EpoxyController<List<Path>, List<Path>>() {
 
     override fun isStickyHeader(position: Int): Boolean {
         return adapter.getModelAtPosition(position)::class == ItemSectionListBindingModel_::class
@@ -37,11 +27,17 @@ class StickyHeaderController() : Typed2EpoxyController<List<Path>, List<Path>>()
                     itemNodeList {
                         id(i)
                         node(node)
+                        click { v ->
+                            onClick(node.id)
+                        }
                         if (!node.childNodes.isNullOrEmpty()) {
                             node.childNodes.forEach {
                                 itemChildNodeList {
                                     id(i)
                                     childNode(it)
+                                    click { v ->
+                                        onClick(it.id!!)
+                                    }
                                 }
                             }
                         }

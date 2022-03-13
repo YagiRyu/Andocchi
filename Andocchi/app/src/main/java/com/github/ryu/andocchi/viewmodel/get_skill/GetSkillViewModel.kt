@@ -10,6 +10,9 @@ import com.github.ryu.andocchi.model.Node
 import com.github.ryu.andocchi.model.Path
 import com.github.ryu.andocchi.model.Section
 import com.github.ryu.andocchi.repository.HomeRepository
+import com.github.ryu.andocchi.repository.UserRepository
+import com.github.ryu.andocchi.ui.get_skill.DialogState
+import com.github.ryu.andocchi.ui.get_skill.SkillDialogFragment
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -18,7 +21,14 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class GetSkillViewModel @Inject constructor(private val repository: HomeRepository) : ViewModel() {
+class GetSkillViewModel @Inject constructor(
+    private val repository: HomeRepository,
+    private val userRepository: UserRepository
+    ) : ViewModel() {
+
+    companion object {
+        const val LEVEL_UP = 1
+    }
 
     private val _paths = MutableLiveData<List<Path>?>()
     val paths: LiveData<List<Path>?> = _paths
@@ -28,6 +38,8 @@ class GetSkillViewModel @Inject constructor(private val repository: HomeReposito
 
     private val _nodes = MutableLiveData<Node>()
     val nodes: LiveData<Node> = _nodes
+
+    val state = MutableLiveData<DialogState<SkillDialogFragment>>()
 
     private val _childNodes = MutableLiveData<ChildNode>()
     val childNode: LiveData<ChildNode> = _childNodes
@@ -63,4 +75,16 @@ class GetSkillViewModel @Inject constructor(private val repository: HomeReposito
         }
     }
 
+    fun updateUserSkill(skillId: String) {
+
+        viewModelScope.launch(Dispatchers.Default) {
+            val userLevel = userRepository.fetchLevel()
+            val skillList = userRepository.fetchSkill()[0].split(",").filter { it != "" }.toMutableList()
+            skillList.add(skillId)
+            userRepository.updateUserSkill(skillList)
+            if (skillList.size % 2 == 0) {
+                userRepository.updateUserLevel(userLevel + LEVEL_UP)
+            }
+        }
+    }
 }

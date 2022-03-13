@@ -13,7 +13,6 @@
         android:id="@+id/profile_constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_01"
         tools:context=".ui.profile.ProfileFragment">
 
         <LinearLayout
@@ -57,7 +56,6 @@
             android:layout_height="364dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/character_01"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

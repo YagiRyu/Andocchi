@@ -32,14 +32,15 @@ class ProfileViewModel @Inject constructor(private val repository: UserRepositor
 
     private fun setUserNameAndUserLevel() {
         viewModelScope.launch(Dispatchers.Default) {
+            //repository.deleteUserInfo(repository.fetchUserName()[0])
             if (repository.fetchUserName().isEmpty()) {
                 repository.insertUserInfo(USER)
             }
 
             // LiveDataは、バックグラウンドスレッドで定義できないので、メインスレッドで定義している
             withContext(Dispatchers.Main) {
-                _userName.value = repository.fetchUserName()[0].name
-                _userLevel.value = repository.fetchUserName()[0].level
+                _userName.value = repository.fetchName()
+                _userLevel.value = repository.fetchLevel()
             }
             Log.d("Hello", "${repository.fetchUserName()}: ")
         }
@@ -47,8 +48,8 @@ class ProfileViewModel @Inject constructor(private val repository: UserRepositor
 
     fun waitUntilChangedUserName() {
         viewModelScope.launch(Dispatchers.Main) {
-            _userName.value = repository.fetchUserName()[0].name
-            _userLevel.value = repository.fetchUserName()[0].level
+            _userName.value = repository.fetchName()
+            _userLevel.value = repository.fetchLevel()
         }
     }
 

@@ -9,10 +9,13 @@ interface UserDao {
     fun insertUserInfo(user: User)
 
     @Query("UPDATE user_table SET name = :name WHERE id = 1")
-    fun updateUserInfo(name: String)
+    fun updateUserName(name: String)
 
     @Query("UPDATE user_table SET level = :level WHERE id = 1")
     fun updateUserLevel(level: Int)
+
+    @Query("UPDATE user_table SET skill_list = :skillList WHERE id = 1")
+    fun updateUserSkill(skillList: MutableList<String>)
 
     @Query("SELECT * FROM user_table")
     suspend fun fetchUserName(): List<User>
@@ -20,9 +23,13 @@ interface UserDao {
     @Query("SELECT name FROM user_table")
     suspend fun fetchName(): String
 
+    @Query("SELECT level FROM user_table")
+    suspend fun fetchLevel(): Int
+
+    @Query("SELECT skill_list FROM user_table")
+    suspend fun fetchSkill(): MutableList<String>
+
     @Delete
     fun deleteUserInfo(user: User)
 
-//    @Query("SELECT * FROM user_table SET name=:name WHERE name=:old")
-//    fun updateUserName(name: String, old: String)
 }
