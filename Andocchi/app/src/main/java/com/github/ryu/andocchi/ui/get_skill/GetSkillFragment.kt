@@ -14,6 +14,9 @@ import com.github.ryu.andocchi.databinding.FragmentGetSkillBinding
 import com.github.ryu.andocchi.utils.StickyHeaderController
 import com.github.ryu.andocchi.viewmodel.get_skill.GetSkillViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlin.coroutines.CoroutineContext
 
 @AndroidEntryPoint
 class GetSkillFragment : Fragment() {
@@ -38,7 +41,7 @@ class GetSkillFragment : Fragment() {
         binding.lifecycleOwner = this
 
         viewModel.paths.observe(viewLifecycleOwner, Observer {
-            val stickyHeaderController = StickyHeaderController { position: Int->
+            val stickyHeaderController = StickyHeaderController() { position: Int->
                 SkillDialogFragment.show("from fragment", position.toString(), childFragmentManager, TAG)
             }
             binding.skillContainerRecyclerView.adapter = stickyHeaderController.adapter

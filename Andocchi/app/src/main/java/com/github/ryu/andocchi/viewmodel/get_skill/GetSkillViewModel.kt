@@ -33,34 +33,13 @@ class GetSkillViewModel @Inject constructor(
     private val _paths = MutableLiveData<List<Path>?>()
     val paths: LiveData<List<Path>?> = _paths
 
-    private val _sections = MutableLiveData<Section>()
-    val sections: LiveData<Section> = _sections
-
-    private val _nodes = MutableLiveData<Node>()
-    val nodes: LiveData<Node> = _nodes
-
     val state = MutableLiveData<DialogState<SkillDialogFragment>>()
-
-    private val _childNodes = MutableLiveData<ChildNode>()
-    val childNode: LiveData<ChildNode> = _childNodes
-
-    private val _title = MutableLiveData<String>()
-    val title: LiveData<String> = _title
-
-    private val _priority = MutableLiveData<Int>()
-    val priority: LiveData<Int> = _priority
-
-    private val _isJetpack = MutableLiveData<Boolean>()
-    val isJetpack: LiveData<Boolean> = _isJetpack
-
-    private val _checkState = MutableLiveData("未達成")
-    val checkState: LiveData<String> = _checkState
 
     init {
         fetchRoadMap()
     }
 
-    fun fetchRoadMap() {
+    private fun fetchRoadMap() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = repository.fetchRoadMap()
@@ -75,11 +54,21 @@ class GetSkillViewModel @Inject constructor(
         }
     }
 
-    fun updateUserSkill(skillId: String) {
+    fun isContainSkill(skillId: String) {
+        viewModelScope.launch(Dispatchers.Default) {
+            val skillList = userRepository.fetchSkill().createMutableList()
+            if (skillId in skillList) {
+                updateUserSkillDown(skillId)
+            } else {
+                updateUserSkill(skillId)
+            }
+        }
+    }
 
+    private suspend fun updateUserSkill(skillId: String) {
         viewModelScope.launch(Dispatchers.Default) {
             val userLevel = userRepository.fetchLevel()
-            val skillList = userRepository.fetchSkill()[0].split(",").filter { it != "" }.toMutableList()
+            val skillList = userRepository.fetchSkill().createMutableList()
             skillList.add(skillId)
             userRepository.updateUserSkill(skillList)
             if (skillList.size % 2 == 0) {
@@ -87,4 +76,19 @@ class GetSkillViewModel @Inject constructor(
             }
         }
     }
+
+    private suspend fun updateUserSkillDown(skillId: String) {
+        viewModelScope.launch(Dispatchers.Default) {
+            val userLevel = userRepository.fetchLevel()
+            val skillList = userRepository.fetchSkill().createMutableList()
+            skillList.remove(skillId)
+            userRepository.updateUserSkill(skillList)
+            if (skillList.size % 2 != 0) {
+                userRepository.updateUserLevel(userLevel - LEVEL_UP)
+            }
+        }
+    }
+
+    private fun MutableList<String>.createMutableList() =
+        this[0].split(",").filter { it != "" }.toMutableList()
 }
