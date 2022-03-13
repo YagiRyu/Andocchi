@@ -18,7 +18,7 @@ class ProfileEditViewModel @Inject constructor(private val repository: UserRepos
     private val _enabled = MutableLiveData<Boolean>(false)
     val enabled: LiveData<Boolean> = _enabled
 
-    val textCount: MediatorLiveData<Int> = MediatorLiveData()
+    private val textCount: MediatorLiveData<Int> = MediatorLiveData()
 
     private lateinit var user: User
 
@@ -40,7 +40,7 @@ class ProfileEditViewModel @Inject constructor(private val repository: UserRepos
 
     fun updateUserInfo() {
         viewModelScope.launch(Dispatchers.Default) {
-            repository.updateUserInfo(_editText.value.toString())
+            repository.updateUserName(_editText.value.toString())
         }
     }
 }
