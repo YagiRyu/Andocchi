@@ -1,8 +1,10 @@
 package com.github.ryu.andocchi.utils
 
+import android.graphics.Color
 import com.airbnb.epoxy.Typed2EpoxyController
 import com.github.ryu.andocchi.*
 import com.github.ryu.andocchi.model.Path
+import com.github.ryu.andocchi.viewmodel.get_skill.GetSkillViewModel
 
 class StickyHeaderController(
     private val onClick: (position: Int) -> Unit
@@ -29,6 +31,7 @@ class StickyHeaderController(
                         node(node)
                         click { v ->
                             onClick(node.id)
+                            v.setBackgroundColor(Color.BLUE)
                         }
                         if (!node.childNodes.isNullOrEmpty()) {
                             node.childNodes.forEach {

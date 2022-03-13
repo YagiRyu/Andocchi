@@ -10,6 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.github.ryu.andocchi.databinding.LayoutCustomDialogBinding
 import com.github.ryu.andocchi.viewmodel.get_skill.GetSkillViewModel
 
@@ -56,7 +57,7 @@ class SkillDialogFragment : DialogFragment() {
             .setMessage(message)
             .setPositiveButton("OK") {_, _ ->
                 viewModel.state.value = DialogState.OK(this@SkillDialogFragment)
-                viewModel.updateUserSkill(message)
+                viewModel.isContainSkill(message)
             }
             .create()
     }
