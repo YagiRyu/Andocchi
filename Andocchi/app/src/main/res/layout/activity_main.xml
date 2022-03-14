@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/constraint"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <fragment
@@ -23,6 +24,7 @@
         android:id="@+id/activity_main_bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/bottom_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -13,11 +13,9 @@ import com.github.ryu.andocchi.repository.HomeRepository
 import com.github.ryu.andocchi.repository.UserRepository
 import com.github.ryu.andocchi.ui.get_skill.DialogState
 import com.github.ryu.andocchi.ui.get_skill.SkillDialogFragment
+import com.github.ryu.andocchi.utils.createMutableList
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -32,6 +30,9 @@ class GetSkillViewModel @Inject constructor(
 
     private val _paths = MutableLiveData<List<Path>?>()
     val paths: LiveData<List<Path>?> = _paths
+
+    private val _levelUpFlag = MutableLiveData<Boolean>()
+    val levelUpFlag: LiveData<Boolean> = _levelUpFlag
 
     val state = MutableLiveData<DialogState<SkillDialogFragment>>()
 
@@ -65,6 +66,8 @@ class GetSkillViewModel @Inject constructor(
         }
     }
 
+    suspend fun fetchSkillList() = userRepository.fetchSkill().createMutableList()
+
     private suspend fun updateUserSkill(skillId: String) {
         viewModelScope.launch(Dispatchers.Default) {
             val userLevel = userRepository.fetchLevel()
@@ -73,6 +76,9 @@ class GetSkillViewModel @Inject constructor(
             userRepository.updateUserSkill(skillList)
             if (skillList.size % 2 == 0) {
                 userRepository.updateUserLevel(userLevel + LEVEL_UP)
+                withContext(Dispatchers.Main) {
+                    _levelUpFlag.value = true
+                }
             }
         }
     }
@@ -88,7 +94,4 @@ class GetSkillViewModel @Inject constructor(
             }
         }
     }
-
-    private fun MutableList<String>.createMutableList() =
-        this[0].split(",").filter { it != "" }.toMutableList()
 }

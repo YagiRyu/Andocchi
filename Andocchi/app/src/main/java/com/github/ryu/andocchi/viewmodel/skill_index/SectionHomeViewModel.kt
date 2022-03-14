@@ -20,14 +20,15 @@ class SectionHomeViewModel @Inject constructor(private val repository: HomeRepos
     private val _errorMessage = MutableLiveData(false)
     val errorMessage: LiveData<Boolean> = _errorMessage
 
-    fun displaySection(position: Int) {
+    fun displaySection(position: Int, skill: String) {
         var i = 0
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = repository.fetchRoadMap()
                 response?.let {
                     while (i < response[position].sections?.size!!) {
-                        _sections.postValue(response[position].sections?.get(i)?.nodes)
+                        if (skill == response[position].sections?.get(i)?.title)
+                            _sections.postValue(response[position].sections?.get(i)?.nodes)
                         i++
                     }
                 }

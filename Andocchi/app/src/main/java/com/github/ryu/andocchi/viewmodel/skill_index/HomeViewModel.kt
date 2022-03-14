@@ -12,6 +12,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,6 +20,9 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
 
     private val _paths = MutableLiveData<List<Path>?>(emptyList())
     val paths: LiveData<List<Path>?> = _paths
+
+    private val _section = MutableLiveData<List<Section>>(emptyList())
+    val section: LiveData<List<Section>> = _section
 
     private val _errorMessage = MutableLiveData(false)
     val errorMessage: LiveData<Boolean> = _errorMessage
@@ -32,11 +36,12 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
             try {
                 val response = repository.fetchRoadMap()
                 response?.let {
-                    _paths.postValue(response)
-                    delay(1000L)
+                    _paths.postValue(it)
                 }
             } catch (e: Throwable) {
-                _errorMessage.value = true
+                withContext(Dispatchers.Main) {
+                    _errorMessage.value = true
+                }
                 Log.d("error", "fetchRoadMap: $e")
             }
         }

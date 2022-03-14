@@ -3,15 +3,11 @@ package com.github.ryu.andocchi
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.room.Room
-import com.github.ryu.andocchi.data.UserDatabase
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.activity_main_bottom_navigation_view)
 
         // AppBarConfigurationの引数に渡したIDのFragmentは、toolbarに戻るボタンを表示させない
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_profile, R.id.nav_home, R.id.nav_skill))
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_profile, R.id.nav_home, R.id.nav_skill, R.id.levelUpFragment))
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -9,33 +9,52 @@
         <variable
             name="click"
             type="android.view.View.OnClickListener" />
+        <variable
+            name="isFinished"
+            type="Boolean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/skill_node"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:background="@{isFinished ? (@drawable/gradient_color) : (@drawable/background)}"
         android:padding="16dp"
+        android:layout_marginVertical="5dp"
         android:onClick="@{click}">
 
         <TextView
             android:id="@+id/node_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:text="@{node.title}"
+            android:textColor="@{isFinished ? (@color/white) : (@color/text)}"
             android:fontFamily="@font/rounded1c_extra_bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/priority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/priority"
+            android:fontFamily="@font/rounded1c_extra_bold"
+            android:textSize="20sp"
+            android:textColor="@{isFinished ? (@color/white) : (@color/text)}"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/node_priority" />
+
+        <TextView
             android:id="@+id/node_priority"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:text="@{node.priority.toString()}"
             android:fontFamily="@font/rounded1c_extra_bold"
+            android:textColor="@{isFinished ? (@color/white) : (@color/text)}"
+            android:layout_marginEnd="5dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

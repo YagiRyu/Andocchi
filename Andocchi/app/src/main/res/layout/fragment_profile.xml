@@ -13,6 +13,7 @@
         android:id="@+id/profile_constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
         tools:context=".ui.profile.ProfileFragment">
 
         <LinearLayout
@@ -23,14 +24,15 @@
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/andocci_image" >
+            app:layout_constraintBottom_toTopOf="@+id/image_card" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
                 android:textSize="23sp"
+                android:textColor="@color/text"
+                android:fontFamily="@font/rounded1c_extra_bold"
                 android:text="@string/lv" />
 
             <TextView
@@ -38,6 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
+                android:textColor="@color/text"
+                android:fontFamily="@font/rounded1c_extra_bold"
                 android:textSize="25sp"
                 android:text="@{viewmodel.userLevel.toString()}" />
 
@@ -45,22 +49,34 @@
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:fontFamily="@font/rounded1c_extra_bold"
                 android:gravity="center"
                 android:text="@{viewmodel.userName}"
                 android:textSize="30sp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/andocci_image"
-            android:layout_width="392dp"
-            android:layout_height="364dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/image_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/andocchi_image_desc" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/andocci_image"
+                android:layout_width="392dp"
+                android:layout_height="364dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/andocchi_image_desc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/go_edit_button"
@@ -69,8 +85,8 @@
             android:layout_marginTop="20dp"
             android:text="@string/change_name"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/andocci_image"
+            android:fontFamily="@font/rounded1c_extra_bold"
+            app:layout_constraintTop_toBottomOf="@id/image_card"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

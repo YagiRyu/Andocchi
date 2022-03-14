@@ -24,8 +24,8 @@
         android:label="SKILL"
         tools:layout="@layout/fragment_get_skill" >
         <action
-            android:id="@+id/action_nav_skill_to_getSkillNodeFragment"
-            app:destination="@id/getSkillNodeFragment" />
+            android:id="@+id/action_nav_skill_to_levelUpFragment"
+            app:destination="@id/levelUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_profile"
@@ -53,6 +53,9 @@
         <argument
             android:name="json_position_number"
             app:argType="integer" />
+        <argument
+            android:name="path_position_number"
+            app:argType="string" />
         <action
             android:id="@+id/action_sectionHomeFragment_to_nodeHomeFragment"
             app:destination="@id/nodeHomeFragment"
@@ -75,13 +78,8 @@
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/getSkillNodeFragment"
-        android:name="com.github.ryu.andocchi.ui.get_skill.GetSkillNodeFragment"
-        android:label="SKILL習得">
-
-        <argument
-            android:name="json_position_node_number"
-            app:argType="integer" />
-    </fragment>
+        android:id="@+id/levelUpFragment"
+        android:name="com.github.ryu.andocchi.ui.get_skill.LevelUpFragment"
+        android:label="LEVEL UP" />
 
 </navigation>

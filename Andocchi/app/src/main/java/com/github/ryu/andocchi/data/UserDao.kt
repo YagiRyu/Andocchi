@@ -31,5 +31,4 @@ interface UserDao {
 
     @Delete
     fun deleteUserInfo(user: User)
-
 }
