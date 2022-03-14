@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.epoxy.stickyheader.StickyHeaderLinearLayoutManager
 import com.github.ryu.andocchi.databinding.FragmentGetSkillBinding
@@ -16,12 +17,12 @@ import com.github.ryu.andocchi.viewmodel.get_skill.GetSkillViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 @AndroidEntryPoint
 class GetSkillFragment : Fragment() {
-
-    private var recyclerView: RecyclerView? = null
 
     private var _binding: FragmentGetSkillBinding? = null
     private val binding get() = _binding!!
@@ -41,14 +42,22 @@ class GetSkillFragment : Fragment() {
         binding.lifecycleOwner = this
 
         viewModel.paths.observe(viewLifecycleOwner, Observer {
-            val stickyHeaderController = StickyHeaderController() { position: Int->
-                SkillDialogFragment.show("from fragment", position.toString(), childFragmentManager, TAG)
-            }
-            binding.skillContainerRecyclerView.adapter = stickyHeaderController.adapter
-            binding.skillContainerRecyclerView.layoutManager = StickyHeaderLinearLayoutManager(requireContext())
+            CoroutineScope(Dispatchers.Main).launch {
+                val skillList = viewModel.fetchSkillList()
 
-            stickyHeaderController.setData(viewModel.paths.value!!, viewModel.paths.value!!)
-            binding.skillContainerRecyclerView.setController(stickyHeaderController)
+                val stickyHeaderController = StickyHeaderController(skillList) { position: Int->
+                    SkillDialogFragment.show("このスキルを習得しますか？",
+                        position.toString(),
+                        skillList,
+                        childFragmentManager,
+                        TAG) { }
+                }
+                binding.skillContainerRecyclerView.adapter = stickyHeaderController.adapter
+                binding.skillContainerRecyclerView.layoutManager = StickyHeaderLinearLayoutManager(requireContext())
+
+                stickyHeaderController.setData(viewModel.paths.value!!, viewModel.paths.value!!)
+                binding.skillContainerRecyclerView.setController(stickyHeaderController)
+            }
         })
 
         return binding.root
@@ -67,11 +76,14 @@ class GetSkillFragment : Fragment() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d("Hello", "onStart: Hello")
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        recyclerView?.adapter = null
-        recyclerView = null
     }
 
 }

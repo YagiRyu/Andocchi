@@ -12,7 +12,6 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.github.ryu.andocchi.R
 import com.github.ryu.andocchi.adapter.SkillItemAdapter
 import com.github.ryu.andocchi.databinding.FragmentHomeBinding
 import com.github.ryu.andocchi.viewmodel.skill_index.HomeViewModel
@@ -21,12 +20,18 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
+    companion object {
+        private const val SECTION_LIMIT = 22
+    }
+
     private var recyclerView: RecyclerView? = null
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: HomeViewModel by viewModels()
+
+    private val sectionTitleList: MutableList<String> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,16 +45,24 @@ class HomeFragment : Fragment() {
         viewModel.paths.observe(viewLifecycleOwner, Observer {
             recyclerView = binding.containerRecyclerView
             val linearLayoutManager = LinearLayoutManager(view?.context)
-            val adapter = SkillItemAdapter(viewModel.paths.value!!)
+            it?.forEach { path ->
+                if (path.sections == null || sectionTitleList.size == SECTION_LIMIT)
+                    return@forEach
+                for (section in path.sections) {
+                    sectionTitleList.add(section.title!!)
+                }
+                Log.d("Hello", "onCreateView: ${path.sections.size}")
+            }
+            val adapter = SkillItemAdapter(sectionTitleList, viewModel.paths.value!!)
 
             recyclerView?.layoutManager = linearLayoutManager
             recyclerView?.adapter = adapter
             recyclerView?.setHasFixedSize(true)
 
             adapter.setOnItemClickListener(object : SkillItemAdapter.OnItemClickListener{
-                override fun onItemClickListener(view: View, position: Int, clickedText: String) {
+                override fun onItemClickListener(pathPosition: Int, skill: String) {
                     // Fragment間で、押されたPathのPositionをSectionスクリーンに渡す
-                    val action = HomeFragmentDirections.actionNavHomeToSectionHomeFragment(position)
+                    val action = HomeFragmentDirections.actionNavHomeToSectionHomeFragment(pathPosition, skill)
                     findNavController().navigate(action)
                 }
             })
@@ -62,6 +75,11 @@ class HomeFragment : Fragment() {
         })
         return binding.root
     }
+
+//    fun Int.modifyNumber() = when (this) {
+//
+//        else -> 16
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

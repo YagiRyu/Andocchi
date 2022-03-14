@@ -47,23 +47,23 @@ class ProfileFragment : Fragment() {
     private fun changeImageAndBackgroundByLevel(it: Int?) {
         when (it) {
             in LEVEL_ZERO_TO_FOUR -> {
-                binding.profileConstraint.setBackgroundResource(R.drawable.bg_01)
+                binding.imageCard.setBackgroundResource(R.drawable.bg_01)
                 binding.andocciImage.setImageResource(R.drawable.character_01)
             }
             in LEVEL_FIVE_TO_NINE -> {
-                binding.profileConstraint.setBackgroundResource(R.drawable.bg_02)
+                binding.imageCard.setBackgroundResource(R.drawable.bg_02)
                 binding.andocciImage.setImageResource(R.drawable.character_02)
             }
             in LEVEL_TEN_TO_FOURTEEN -> {
-                binding.profileConstraint.setBackgroundResource(R.drawable.bg_03)
+                binding.imageCard.setBackgroundResource(R.drawable.bg_03)
                 binding.andocciImage.setImageResource(R.drawable.character_03)
             }
             in LEVEL_FIFTEEN_TO_NINETEEN -> {
-                binding.profileConstraint.setBackgroundResource(R.drawable.bg_04)
+                binding.imageCard.setBackgroundResource(R.drawable.bg_04)
                 binding.andocciImage.setImageResource(R.drawable.character_04)
             }
             else -> {
-                binding.profileConstraint.setBackgroundResource(R.drawable.bg_05)
+                binding.imageCard.setBackgroundResource(R.drawable.bg_05)
                 binding.andocciImage.setImageResource(R.drawable.character_05)
             }
         }
