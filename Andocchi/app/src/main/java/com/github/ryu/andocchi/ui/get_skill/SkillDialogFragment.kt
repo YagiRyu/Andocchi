@@ -86,6 +86,7 @@ class SkillDialogFragment : DialogFragment() {
                 .setPositiveButton("OK") {_, _ ->
                     viewModel.state.value = DialogState.OK(this@SkillDialogFragment)
                     viewModel.isContainSkill(message)
+                    dismiss()
                     lambda()
                 }
                 .create()

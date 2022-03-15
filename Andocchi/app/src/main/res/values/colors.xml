@@ -10,5 +10,6 @@
     <color name="background">#121640</color>
     <color name="bottom_background">#2940AB</color>
     <color name="is_selected">#3CDC84</color>
-    <color name="text">#00c4cc</color>
+    <color name="text">#1BD760</color>
+    <color name="card_background">#547CFF</color>
 </resources>

@@ -12,4 +12,8 @@
     <string name="skill_card_desc">習得したいスキルをタップして、スキルを習得しましょう！\nスキルが上がるごとにレベルも上がります！</string>
     <string name="app_logo">App logo</string>
     <string name="priority">Priority</string>
+    <string name="android_developer_nroadmap_2022">Android Developer\nRoadmap 2022</string>
+    <string name="level_up_image">level up image</string>
+    <string name="back_skill_screen_text">スキル習得画面に戻る</string>
+    <string name="level_up">LEVEL UP !!</string>
 </resources>

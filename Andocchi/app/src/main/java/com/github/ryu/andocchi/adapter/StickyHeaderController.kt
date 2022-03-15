@@ -1,4 +1,4 @@
-package com.github.ryu.andocchi.utils
+package com.github.ryu.andocchi.adapter
 
 import com.airbnb.epoxy.Typed2EpoxyController
 import com.github.ryu.andocchi.*
@@ -31,6 +31,7 @@ class StickyHeaderController(
                         isFinished(node.id.toString() in skillList)
                         click { v ->
                             onClick(node.id)
+                            v.setBackgroundColor(R.drawable.background)
                         }
                         if (!node.childNodes.isNullOrEmpty()) {
                             node.childNodes.forEach {
@@ -40,7 +41,7 @@ class StickyHeaderController(
                                     isFinished(it.id.toString() in skillList)
                                     click { v ->
                                         onClick(it.id!!)
-                                        v.setBackgroundColor(R.drawable.gradient_color)
+                                        v.setBackgroundColor(R.drawable.background)
                                     }
                                 }
                             }
