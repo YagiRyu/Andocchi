@@ -51,7 +51,6 @@ class HomeFragment : Fragment() {
                 for (section in path.sections) {
                     sectionTitleList.add(section.title!!)
                 }
-                Log.d("Hello", "onCreateView: ${path.sections.size}")
             }
             val adapter = SkillItemAdapter(sectionTitleList, viewModel.paths.value!!)
 

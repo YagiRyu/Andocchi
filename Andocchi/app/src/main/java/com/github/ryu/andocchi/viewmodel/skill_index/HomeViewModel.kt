@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.ryu.andocchi.model.Path
 import com.github.ryu.andocchi.model.Section
+import com.github.ryu.andocchi.model.User
 import com.github.ryu.andocchi.repository.HomeRepository
+import com.github.ryu.andocchi.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -16,7 +18,10 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repository: HomeRepository) : ViewModel() {
+class HomeViewModel @Inject constructor(
+    private val repository: HomeRepository,
+    private val userRepository: UserRepository
+    ) : ViewModel() {
 
     private val _paths = MutableLiveData<List<Path>?>(emptyList())
     val paths: LiveData<List<Path>?> = _paths
@@ -27,12 +32,21 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
     private val _errorMessage = MutableLiveData(false)
     val errorMessage: LiveData<Boolean> = _errorMessage
 
+    companion object {
+        private val skillList: MutableList<String> = mutableListOf()
+        private val USER = User(id = 1, name = "Androcchi", level = 1, memo = null, skillList = skillList)
+    }
+
     init {
         fetchRoadMap()
     }
 
     private fun fetchRoadMap() {
         viewModelScope.launch(Dispatchers.IO) {
+//            userRepository.deleteUserInfo(userRepository.fetchUserName()[0])
+            if (userRepository.fetchUserName().isEmpty()) {
+                userRepository.insertUserInfo(USER)
+            }
             try {
                 val response = repository.fetchRoadMap()
                 response?.let {

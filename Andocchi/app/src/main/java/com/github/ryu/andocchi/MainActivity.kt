@@ -1,6 +1,5 @@
 package com.github.ryu.andocchi
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.Navigation

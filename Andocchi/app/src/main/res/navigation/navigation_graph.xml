@@ -86,5 +86,17 @@
         android:id="@+id/levelUpFragment"
         android:name="com.github.ryu.andocchi.ui.get_skill.LevelUpFragment"
         android:label="LEVEL UP" />
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.github.ryu.andocchi.ui.tutorial.TutorialFragment"
+        android:label="TutorialFragment" >
+        <action
+            android:id="@+id/action_tutorialFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@animator/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim"/>
+    </fragment>
 
 </navigation>
