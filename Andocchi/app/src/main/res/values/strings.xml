@@ -16,4 +16,7 @@
     <string name="level_up_image">level up image</string>
     <string name="back_skill_screen_text">スキル習得画面に戻る</string>
     <string name="level_up">LEVEL UP !!</string>
+    <string name="tutorial_first_text">Android Developer Roadmap 2022へようこそ！\nこのアプリで、Andocchi君を育てて最強のAndroidエンジニアを目指しましょう！</string>
+    <string name="tutorial_second_text">スキルを2つ習得するごとに1レベル上がります。レベルが上がるとAndocchi君の見た目もどんどんパワーアップしていきます！</string>
+    <string name="tutorial_third_text">今日から最強のAndroidエンジニアを目指しましょう！</string>
 </resources>
