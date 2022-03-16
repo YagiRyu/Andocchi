@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -17,17 +18,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val navController = Navigation.findNavController(this, R.id.activity_main_nav_host_fragment)
+        val navController = supportFragmentManager.findFragmentById(R.id.activity_main_nav_host)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.activity_main_bottom_navigation_view)
 
         // AppBarConfigurationの引数に渡したIDのFragmentは、toolbarに戻るボタンを表示させない
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_profile, R.id.nav_home, R.id.nav_skill, R.id.levelUpFragment, R.id.nav_memo))
 
-        NavigationUI.setupWithNavController(bottomNavigationView, navController)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        NavigationUI.setupWithNavController(bottomNavigationView, navController!!.findNavController())
+        setupActionBarWithNavController(navController.findNavController(), appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return findNavController(R.id.activity_main_nav_host_fragment).navigateUp()
+        return findNavController(R.id.activity_main_nav_host).navigateUp()
     }
 }
