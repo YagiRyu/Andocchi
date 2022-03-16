@@ -66,6 +66,5 @@ class SectionHomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        binding.containerSectionItemRecyclerView.adapter = null
     }
 }

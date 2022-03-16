@@ -59,7 +59,6 @@ class NodeHomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        binding.containerNodeItemRecyclerView.adapter = null
     }
 
 }

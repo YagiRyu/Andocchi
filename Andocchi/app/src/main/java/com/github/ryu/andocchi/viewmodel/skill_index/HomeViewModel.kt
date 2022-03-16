@@ -46,8 +46,10 @@ class HomeViewModel @Inject constructor(
     private fun fetchRoadMap() {
         viewModelScope.launch(Dispatchers.IO) {
 //            userRepository.deleteUserInfo(userRepository.fetchUserName()[0])
-            if (userRepository.fetchUserName().isEmpty()) {
-                userRepository.insertUserInfo(USER)
+            withContext(Dispatchers.Default) {
+                if (userRepository.fetchUserName().isEmpty()) {
+                    userRepository.insertUserInfo(USER)
+                }
             }
             try {
                 val response = repository.getRoadMap()
