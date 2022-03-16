@@ -35,16 +35,17 @@ class GetSkillFragment : Fragment() {
     ): View? {
         _binding = FragmentGetSkillBinding.inflate(inflater, container, false)
         binding.viewmodel = viewModel
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
 
         viewModel.paths.observe(viewLifecycleOwner, Observer {
             CoroutineScope(Dispatchers.Main).launch {
                 val skillList = viewModel.fetchSkillList()
 
-                val stickyHeaderController = StickyHeaderController(skillList) { position: Int->
+                val stickyHeaderController = StickyHeaderController(skillList) { position: Int, title: String->
                     SkillDialogFragment.show("このスキルを習得しますか？",
                         position.toString(),
                         skillList,
+                        title,
                         childFragmentManager,
                         TAG) {}
                 }
@@ -70,11 +71,6 @@ class GetSkillFragment : Fragment() {
                 }
             }
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("Hello", "onStart: Hello")
     }
 
     override fun onDestroyView() {

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.github.ryu.andocchi.R
 import com.github.ryu.andocchi.databinding.FragmentLevelUpBinding
 import com.github.ryu.andocchi.ui.profile.ProfileFragment
@@ -16,6 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LevelUpFragment : Fragment() {
+
+    private val args: LevelUpFragmentArgs by navArgs()
 
     private var _binding: FragmentLevelUpBinding? = null
     private val binding get() = _binding!!
@@ -27,7 +30,7 @@ class LevelUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLevelUpBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewmodel = viewModel
 
         viewModel.userLevel.observe(viewLifecycleOwner, Observer {
@@ -35,7 +38,7 @@ class LevelUpFragment : Fragment() {
         })
 
         binding.levelUpMemoButton.setOnClickListener {
-            findNavController().navigate(LevelUpFragmentDirections.actionLevelUpFragmentToMemoFragment())
+            findNavController().navigate(LevelUpFragmentDirections.actionLevelUpFragmentToMemoFragment(args.skillTitle))
         }
 
         return binding.root

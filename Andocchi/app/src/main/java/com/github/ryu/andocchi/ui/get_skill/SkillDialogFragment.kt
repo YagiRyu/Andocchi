@@ -21,12 +21,15 @@ class SkillDialogFragment : DialogFragment() {
         private const val BUNDLE_KEY_TITLE = "bundle_key_title"
         private const val BUNDLE_KEY_MESSAGE = "bundle_key_message"
         private const val BUNDLE_KEY_LIST = "bundle_key_list"
+        private const val BUNDLE_KEY_SKILL_TITLE = "bundle_key_skill_title"
         private const val BUNDLE_KEY_LAMBDA = "bundle_key_lambda"
 
         private fun newInstance() = SkillDialogFragment()
 
-        private fun newInstance(title: String, message: String,
+        private fun newInstance(title: String,
+                                message: String,
                                 skillList: MutableList<String>,
+                                skillTitle: String,
                                 navigation: () -> Unit,
         ): SkillDialogFragment {
             return newInstance().apply {
@@ -34,6 +37,7 @@ class SkillDialogFragment : DialogFragment() {
                     Pair(BUNDLE_KEY_TITLE, title),
                     Pair(BUNDLE_KEY_MESSAGE, message),
                     Pair(BUNDLE_KEY_LIST, skillList),
+                    Pair(BUNDLE_KEY_SKILL_TITLE, skillTitle),
                     Pair(BUNDLE_KEY_LAMBDA, navigation)
                 )
             }
@@ -42,10 +46,11 @@ class SkillDialogFragment : DialogFragment() {
         fun show(title: String,
                  message: String,
                  skillList: MutableList<String>,
+                 skillTitle: String,
                  fragmentManager: FragmentManager, tag: String,
                  navigation: () -> Unit
         ) {
-            newInstance(title, message, skillList, navigation).run {
+            newInstance(title, message, skillList, skillTitle, navigation).run {
                 show(fragmentManager, tag)
             }
         }
@@ -54,7 +59,8 @@ class SkillDialogFragment : DialogFragment() {
     lateinit var title: String
     lateinit var message: String
     lateinit var skillList: MutableList<String>
-    lateinit var lambda: () -> Unit
+    lateinit var skillTitle: String
+    lateinit var lambda: (name: String) -> Unit
 
     private val viewModel: GetSkillViewModel by viewModels({ requireActivity() })
 
@@ -64,7 +70,10 @@ class SkillDialogFragment : DialogFragment() {
             title = getString(BUNDLE_KEY_TITLE)!!
             message = getString(BUNDLE_KEY_MESSAGE)!!
             skillList = getStringArrayList(BUNDLE_KEY_LIST)!!
-            lambda = { findNavController().navigate(GetSkillFragmentDirections.actionNavSkillToLevelUpFragment()) }
+            skillTitle = getString(BUNDLE_KEY_SKILL_TITLE)!!
+            lambda = { name: String ->
+                findNavController().navigate(GetSkillFragmentDirections.actionNavSkillToLevelUpFragment(name))
+            }
         }
     }
 
@@ -87,7 +96,7 @@ class SkillDialogFragment : DialogFragment() {
                     viewModel.state.value = DialogState.OK(this@SkillDialogFragment)
                     viewModel.isContainSkill(message)
                     dismiss()
-                    lambda()
+                    lambda(skillTitle)
                 }
                 .create()
         }

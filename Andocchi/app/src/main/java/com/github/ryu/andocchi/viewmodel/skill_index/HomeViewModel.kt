@@ -10,6 +10,7 @@ import com.github.ryu.andocchi.model.Section
 import com.github.ryu.andocchi.model.User
 import com.github.ryu.andocchi.repository.HomeRepository
 import com.github.ryu.andocchi.repository.UserRepository
+import com.github.ryu.andocchi.utils.createMutableList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

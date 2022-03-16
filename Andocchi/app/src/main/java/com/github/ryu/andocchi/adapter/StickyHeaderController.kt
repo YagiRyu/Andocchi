@@ -6,7 +6,7 @@ import com.github.ryu.andocchi.model.Path
 
 class StickyHeaderController(
     private val skillList: MutableList<String>,
-    private val onClick: (position: Int) -> Unit
+    private val onClick: (position: Int, title: String) -> Unit
 ) : Typed2EpoxyController<List<Path>, List<Path>>() {
 
     override fun isStickyHeader(position: Int): Boolean {
@@ -30,7 +30,7 @@ class StickyHeaderController(
                         node(node)
                         isFinished(node.id.toString() in skillList)
                         click { v ->
-                            onClick(node.id)
+                            onClick(node.id, node.title!!)
                             v.setBackgroundColor(R.drawable.background)
                         }
                         if (!node.childNodes.isNullOrEmpty()) {
@@ -40,7 +40,7 @@ class StickyHeaderController(
                                     childNode(it)
                                     isFinished(it.id.toString() in skillList)
                                     click { v ->
-                                        onClick(it.id!!)
+                                        onClick(it.id!!, node.title!!)
                                         v.setBackgroundColor(R.drawable.background)
                                     }
                                 }
