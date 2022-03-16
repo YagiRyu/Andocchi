@@ -20,14 +20,5 @@ data class User(
     val skillList: MutableList<String>,
 
     @ColumnInfo(name = "memo")
-    val memo: String?,
-//
-//    @ColumnInfo(name = "section")
-//    val sections: List<String>,
-//
-//    @ColumnInfo(name = "node")
-//    val nodes: List<String>,
-//
-//    @ColumnInfo(name = "child_node")
-//    val child_nodes: List<String>
+    val memo: MutableList<String>,
 )

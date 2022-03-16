@@ -46,7 +46,7 @@ class GetSkillFragment : Fragment() {
                         position.toString(),
                         skillList,
                         childFragmentManager,
-                        TAG) { }
+                        TAG) {}
                 }
                 binding.skillContainerRecyclerView.adapter = stickyHeaderController.adapter
                 binding.skillContainerRecyclerView.layoutManager = StickyHeaderLinearLayoutManager(requireContext())

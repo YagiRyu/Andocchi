@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 import com.github.ryu.andocchi.model.User
 import com.github.ryu.andocchi.utils.RoomTypeConverters
 
-@Database(entities = [User::class], version = 6, exportSchema = false)
+@Database(entities = [User::class], version = 8, exportSchema = false)
 @TypeConverters(RoomTypeConverters::class)
 abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao

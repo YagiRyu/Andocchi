@@ -34,6 +34,10 @@ class LevelUpFragment : Fragment() {
             changeImageAndBackgroundByLevel(it)
         })
 
+        binding.levelUpMemoButton.setOnClickListener {
+            findNavController().navigate(LevelUpFragmentDirections.actionLevelUpFragmentToMemoFragment())
+        }
+
         return binding.root
     }
 

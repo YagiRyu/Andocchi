@@ -85,11 +85,19 @@
     <fragment
         android:id="@+id/levelUpFragment"
         android:name="com.github.ryu.andocchi.ui.get_skill.LevelUpFragment"
-        android:label="LEVEL UP" />
+        android:label="LEVEL UP" >
+        <action
+            android:id="@+id/action_levelUpFragment_to_memoFragment"
+            app:destination="@id/memoFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@animator/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim"/>
+    </fragment>
     <fragment
         android:id="@+id/tutorialFragment"
         android:name="com.github.ryu.andocchi.ui.tutorial.TutorialFragment"
-        android:label="TutorialFragment" >
+        android:label="チュートリアル" >
         <action
             android:id="@+id/action_tutorialFragment_to_nav_home"
             app:destination="@id/nav_home"
@@ -98,5 +106,19 @@
             app:popEnterAnim="@animator/nav_default_pop_enter_anim"
             app:popExitAnim="@animator/nav_default_pop_exit_anim"/>
     </fragment>
+    <fragment
+        android:id="@+id/memoFragment"
+        android:name="com.github.ryu.andocchi.ui.get_skill.MemoFragment"
+        android:label="メモを残す"
+        tools:layout="@layout/fragment_memo" >
+        <action
+            android:id="@+id/action_memoFragment_to_memoListFragment"
+            app:destination="@id/memoListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoListFragment"
+        android:name="com.github.ryu.andocchi.ui.memo.MemoListFragment"
+        android:label="fragment_memo_list"
+        tools:layout="@layout/fragment_memo_list" />
 
 </navigation>
