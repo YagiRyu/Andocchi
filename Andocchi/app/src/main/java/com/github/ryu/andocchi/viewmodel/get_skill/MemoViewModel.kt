@@ -16,21 +16,20 @@ class MemoViewModel @Inject constructor(private val repository: UserRepository) 
     private val _skill = MutableStateFlow<MutableList<String>>(mutableListOf())
     val skill: StateFlow<MutableList<String>> = _skill
 
-    private val memoList: MutableList<String> = mutableListOf()
-
     init {
         fetchSkill()
     }
 
-    fun fetchSkill() {
+    private fun fetchSkill() {
         viewModelScope.launch(Dispatchers.Main) {
             _skill.value = repository.fetchSkill()
         }
     }
 
-    fun updateMemo(memo: String) {
-        memoList.add(memo)
+    fun updateMemo(memo: String, skillTitle: String) {
         viewModelScope.launch(Dispatchers.Default) {
+            val memoList = repository.fetchMemo()
+            memoList.add("$skillTitle:$memo")
             repository.updateMemo(memoList)
         }
     }

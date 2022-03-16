@@ -17,13 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.github.ryu.andocchi.R
-import com.github.ryu.andocchi.viewmodel.tutorial.TutorialScreenViewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
@@ -32,8 +29,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @ExperimentalPagerApi
 @AndroidEntryPoint
 class TutorialFragment : Fragment() {
-
-    private val viewModel: TutorialScreenViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
