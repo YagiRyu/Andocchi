@@ -50,7 +50,7 @@ class HomeViewModel @Inject constructor(
                 userRepository.insertUserInfo(USER)
             }
             try {
-                val response = repository.fetchRoadMap()
+                val response = repository.getRoadMap()
                 response?.let {
                     _paths.postValue(it)
                 }

@@ -22,8 +22,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SectionHomeFragment : Fragment() {
 
-    private var recyclerView: RecyclerView? = null
-
     // HomeFragmentからの引数
     private val args: SectionHomeFragmentArgs by navArgs()
 
@@ -47,13 +45,12 @@ class SectionHomeFragment : Fragment() {
         binding.viewmodel = viewModel
 
         viewModel.sections.observe(viewLifecycleOwner, Observer {
-            recyclerView = binding.containerSectionItemRecyclerView
             val linearLayoutManager = LinearLayoutManager(view?.context)
             val adapter = SectionSkillItemAdapter(viewModel.sections.value!!)
 
-            recyclerView?.layoutManager = linearLayoutManager
-            recyclerView?.adapter = adapter
-            recyclerView?.setHasFixedSize(true)
+            binding.containerSectionItemRecyclerView.layoutManager = linearLayoutManager
+            binding.containerSectionItemRecyclerView.adapter = adapter
+            binding.containerSectionItemRecyclerView.setHasFixedSize(true)
 
             adapter.setOnItemClickListener(object : SectionSkillItemAdapter.OnItemClickListener{
                 override fun onItemClickListener(view: View, position: Int, clickedText: String) {
@@ -69,7 +66,6 @@ class SectionHomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        this.recyclerView?.adapter = null
-        this.recyclerView = null
+        binding.containerSectionItemRecyclerView.adapter = null
     }
 }
