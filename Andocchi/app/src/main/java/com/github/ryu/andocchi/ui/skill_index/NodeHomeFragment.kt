@@ -21,8 +21,6 @@ class NodeHomeFragment : Fragment() {
 
     private val args: NodeHomeFragmentArgs by navArgs()
 
-    private var recyclerView: RecyclerView? = null
-
     private var _binding: FragmentNodeHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -46,13 +44,12 @@ class NodeHomeFragment : Fragment() {
             if (viewModel.nodes.value == null) {
                 binding.error.text = "スキルがありません"
             } else {
-                recyclerView = binding.containerNodeItemRecyclerView
                 val linearLayoutManager = LinearLayoutManager(view?.context)
                 val adapter = NodeSkillItemAdapter(viewModel.nodes.value!!)
 
-                recyclerView?.layoutManager = linearLayoutManager
-                recyclerView?.adapter = adapter
-                recyclerView?.setHasFixedSize(true)
+                binding.containerNodeItemRecyclerView.layoutManager = linearLayoutManager
+                binding.containerNodeItemRecyclerView.adapter = adapter
+                binding.containerNodeItemRecyclerView.setHasFixedSize(true)
             }
         })
 
@@ -62,8 +59,7 @@ class NodeHomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        recyclerView?.adapter = null
-        recyclerView = null
+        binding.containerNodeItemRecyclerView.adapter = null
     }
 
 }

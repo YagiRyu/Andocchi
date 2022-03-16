@@ -27,7 +27,7 @@ class SplashViewModel @Inject constructor(private val repository: UserRepository
         fetchUserData()
     }
 
-    fun fetchUserData() {
+    private fun fetchUserData() {
 //        viewModelScope.launch(Dispatchers.Default) {
 //            repository.insertUserInfo(USER)
 //        }
@@ -35,8 +35,6 @@ class SplashViewModel @Inject constructor(private val repository: UserRepository
             if (repository.fetchUserName().isEmpty()) {
                 _isExistUser.value = true
             }
-            Log.d("Hello", "fetchUserData: ${isExistUser.value}")
-            Log.d("Hello", "fetchUserData: ${repository.fetchUserName()}")
         }
     }
 }

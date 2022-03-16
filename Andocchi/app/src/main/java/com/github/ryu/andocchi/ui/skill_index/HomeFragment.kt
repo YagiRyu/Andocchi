@@ -24,8 +24,6 @@ class HomeFragment : Fragment() {
         private const val SECTION_LIMIT = 22
     }
 
-    private var recyclerView: RecyclerView? = null
-
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -43,7 +41,6 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         viewModel.paths.observe(viewLifecycleOwner, Observer {
-            recyclerView = binding.containerRecyclerView
             val linearLayoutManager = LinearLayoutManager(view?.context)
             it?.forEach { path ->
                 if (path.sections == null || sectionTitleList.size == SECTION_LIMIT)
@@ -54,9 +51,9 @@ class HomeFragment : Fragment() {
             }
             val adapter = SkillItemAdapter(sectionTitleList, viewModel.paths.value!!)
 
-            recyclerView?.layoutManager = linearLayoutManager
-            recyclerView?.adapter = adapter
-            recyclerView?.setHasFixedSize(true)
+            binding.containerRecyclerView.layoutManager = linearLayoutManager
+            binding.containerRecyclerView.adapter = adapter
+            binding.containerRecyclerView.setHasFixedSize(true)
 
             adapter.setOnItemClickListener(object : SkillItemAdapter.OnItemClickListener{
                 override fun onItemClickListener(pathPosition: Int, skill: String) {
@@ -78,7 +75,6 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        this.recyclerView?.adapter = null
-        this.recyclerView = null
+        binding.containerRecyclerView.adapter = null
     }
 }

@@ -37,13 +37,8 @@ class ProfileViewModel @Inject constructor(private val repository: UserRepositor
             if (repository.fetchUserName().isEmpty()) {
                 repository.insertUserInfo(USER)
             }
-
-            // LiveDataは、バックグラウンドスレッドで定義できないので、メインスレッドで定義している
-            withContext(Dispatchers.Main) {
-                _userName.value = repository.fetchName()
-                _userLevel.value = repository.fetchLevel()
-            }
-            Log.d("Hello", "${repository.fetchUserName()}: ")
+            _userName.postValue(repository.fetchName())
+            _userLevel.postValue(repository.fetchLevel())
         }
     }
 

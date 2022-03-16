@@ -8,13 +8,14 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class MemoListViewModel @Inject constructor(private val repository: UserRepository) : ViewModel() {
     private val _memoList = MutableStateFlow<MutableList<String>>(mutableListOf())
-    val memoList: StateFlow<MutableList<String>> = _memoList
+    val memoList: StateFlow<MutableList<String>> = _memoList.asStateFlow()
 
     init {
         fetchMemoList()
