@@ -23,7 +23,8 @@ class ProfileViewModel @Inject constructor(private val repository: UserRepositor
 
     companion object {
         private val skillList: MutableList<String> = mutableListOf()
-        private val USER = User(id = 1, name = "Androcchi", level = 1, memo = null, skillList = skillList)
+        private val memoList: MutableList<String> = mutableListOf()
+        private val USER = User(id = 1, name = "Androcchi", level = 1, memo = memoList, skillList = skillList)
     }
 
     init {

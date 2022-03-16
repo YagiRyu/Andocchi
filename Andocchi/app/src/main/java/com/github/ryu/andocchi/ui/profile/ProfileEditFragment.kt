@@ -32,7 +32,7 @@ class ProfileEditFragment : Fragment() {
 
         _binding = FragmentProfileEditBinding.inflate(inflater, container, false)
 
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewmodel = viewModel
         return binding.root
     }

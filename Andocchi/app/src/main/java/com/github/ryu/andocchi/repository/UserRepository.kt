@@ -17,11 +17,15 @@ class UserRepository @Inject constructor(private val dao: UserDao) {
 
     fun updateUserSkill(skillList: MutableList<String>) = dao.updateUserSkill(skillList)
 
+    fun updateMemo(memo: MutableList<String>) = dao.updateMemo(memo)
+
     suspend fun fetchName() = dao.fetchName()
 
     suspend fun fetchLevel() = dao.fetchLevel()
 
     suspend fun fetchSkill() = dao.fetchSkill()
+
+    suspend fun fetchMemo() = dao.fetchMemo()
 
     fun deleteUserInfo(user: User) = dao.deleteUserInfo(user)
 }

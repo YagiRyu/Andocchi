@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.viewmodel = viewModel
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
 
         viewModel.paths.observe(viewLifecycleOwner, Observer {
             recyclerView = binding.containerRecyclerView
@@ -74,11 +74,6 @@ class HomeFragment : Fragment() {
         })
         return binding.root
     }
-
-//    fun Int.modifyNumber() = when (this) {
-//
-//        else -> 16
-//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -35,7 +35,7 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         binding.viewmodel = viewModel
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
 
         viewModel.userLevel.observe(viewLifecycleOwner, Observer {
             changeImageAndBackgroundByLevel(it)

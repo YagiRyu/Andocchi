@@ -43,7 +43,7 @@ class SectionHomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentSectionHomeBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewmodel = viewModel
 
         viewModel.sections.observe(viewLifecycleOwner, Observer {
