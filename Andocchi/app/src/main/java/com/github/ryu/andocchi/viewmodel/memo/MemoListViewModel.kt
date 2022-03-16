@@ -1,5 +1,6 @@
 package com.github.ryu.andocchi.viewmodel.memo
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.ryu.andocchi.repository.UserRepository
@@ -21,7 +22,7 @@ class MemoListViewModel @Inject constructor(private val repository: UserReposito
         fetchMemoList()
     }
 
-    private fun fetchMemoList() {
+    fun fetchMemoList() {
         viewModelScope.launch(Dispatchers.Default) {
             _memoList.value = repository.fetchMemo().createMutableList()
         }
