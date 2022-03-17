@@ -1,10 +1,8 @@
 package com.github.ryu.andocchi.di
 
 import com.github.ryu.andocchi.network.GithubService
-import com.github.ryu.andocchi.network.RoadMapService
 import com.github.ryu.andocchi.utils.Constants
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,25 +14,20 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkModule {
+object GithubModule {
 
+    // GitHub
     @Singleton
     @Provides
-    fun provideMoshi(): Moshi =
-        Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
-
-    @Singleton
-    @Provides
-    @Named("Roadmap")
-    fun provideRetrofit(moshi: Moshi): Retrofit =
+    @Named("Github")
+    fun provideGithubRetrofit(moshi: Moshi): Retrofit =
         Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
+            .baseUrl(Constants.GITHUB_API)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
 
     @Singleton
     @Provides
-    fun provideRoadMapService(@Named("Roadmap") retrofit: Retrofit): RoadMapService =
-        retrofit.create(RoadMapService::class.java)
-
+    fun provideGithubService(@Named("Github") retrofit: Retrofit): GithubService =
+        retrofit.create(GithubService::class.java)
 }

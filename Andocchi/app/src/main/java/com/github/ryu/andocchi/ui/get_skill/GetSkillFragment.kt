@@ -37,6 +37,12 @@ class GetSkillFragment : Fragment() {
         binding.viewmodel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         viewModel.paths.observe(viewLifecycleOwner, Observer {
             CoroutineScope(Dispatchers.Main).launch {
                 val skillList = viewModel.fetchSkillList()
@@ -56,12 +62,6 @@ class GetSkillFragment : Fragment() {
                 binding.skillContainerRecyclerView.setController(stickyHeaderController)
             }
         })
-
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         viewModel.state.observe(viewLifecycleOwner) {
             when (it) {

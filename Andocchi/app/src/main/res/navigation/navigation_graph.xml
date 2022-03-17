@@ -127,5 +127,9 @@
         android:name="com.github.ryu.andocchi.ui.memo.MemoListFragment"
         android:label="メモリスト"
         tools:layout="@layout/fragment_memo_list" />
+    <fragment
+        android:id="@+id/nav_code"
+        android:name="com.github.ryu.andocchi.ui.git.CodeFragment"
+        android:label="コードから学ぶ" />
 
 </navigation>

@@ -43,7 +43,6 @@ class MemoFragment : Fragment() {
     ): View? {
         _binding = FragmentMemoBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
-        Log.d("Hello", "onCreateView: ${args.skillTitle}")
         return binding.root.apply {
             binding.memoJetpackCompose.setContent {
                 MaterialTheme {

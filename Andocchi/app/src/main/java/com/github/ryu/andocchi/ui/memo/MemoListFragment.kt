@@ -66,7 +66,6 @@ fun MemoListScreen() {
     val memoList = viewModel.memoList.collectAsState()
 
     Scaffold(modifier = Modifier.fillMaxSize().padding(top = 30.dp)) {
-
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -82,7 +81,7 @@ fun MemoListScreen() {
                     shape = RoundedCornerShape(12.dp),
                     backgroundColor = Color(R.drawable.is_jetpack_gradient_color)
                 ) {
-                    Column() {
+                    Column(modifier = Modifier.padding(10.dp)) {
                         Text(text = memoList.value[it].split(":")[0],
                             color = Color.Green,
                             fontSize = 30.sp,

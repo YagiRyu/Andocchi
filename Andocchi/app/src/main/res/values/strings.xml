@@ -21,4 +21,5 @@
     <string name="tutorial_third_text">今日から最強のAndroidエンジニアを目指しましょう！</string>
     <string name="memo">メモを残す</string>
     <string name="nav_memo_title">Memo</string>
+    <string name="code">Code</string>
 </resources>

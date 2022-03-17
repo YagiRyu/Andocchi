@@ -44,7 +44,7 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun fetchRoadMap() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
 //            userRepository.deleteUserInfo(userRepository.fetchUserName()[0])
             withContext(Dispatchers.Default) {
                 if (userRepository.fetchUserName().isEmpty()) {
