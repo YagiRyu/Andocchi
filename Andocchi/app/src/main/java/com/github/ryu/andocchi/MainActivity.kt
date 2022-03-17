@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.activity_main_bottom_navigation_view)
 
         // AppBarConfigurationの引数に渡したIDのFragmentは、toolbarに戻るボタンを表示させない
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_profile, R.id.nav_home, R.id.nav_skill, R.id.levelUpFragment, R.id.nav_memo))
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_profile, R.id.nav_home, R.id.nav_skill, R.id.levelUpFragment, R.id.nav_memo, R.id.nav_code))
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController!!.findNavController())
         setupActionBarWithNavController(navController.findNavController(), appBarConfiguration)

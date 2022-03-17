@@ -40,7 +40,7 @@ class StickyHeaderController(
                                     childNode(it)
                                     isFinished(it.id.toString() in skillList)
                                     click { v ->
-                                        onClick(it.id!!, node.title!!)
+                                        onClick(it.id!!, it.title!!)
                                         v.setBackgroundColor(R.drawable.background)
                                     }
                                 }

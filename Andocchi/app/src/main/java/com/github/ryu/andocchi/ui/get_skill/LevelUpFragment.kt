@@ -33,14 +33,6 @@ class LevelUpFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewmodel = viewModel
 
-        viewModel.userLevel.observe(viewLifecycleOwner, Observer {
-            changeImageAndBackgroundByLevel(it)
-        })
-
-        binding.levelUpMemoButton.setOnClickListener {
-            findNavController().navigate(LevelUpFragmentDirections.actionLevelUpFragmentToMemoFragment(args.skillTitle))
-        }
-
         return binding.root
     }
 
@@ -73,6 +65,14 @@ class LevelUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.fetchUserLevel()
+
+        viewModel.userLevel.observe(viewLifecycleOwner, Observer {
+            changeImageAndBackgroundByLevel(it)
+        })
+
+        binding.levelUpMemoButton.setOnClickListener {
+            findNavController().navigate(LevelUpFragmentDirections.actionLevelUpFragmentToMemoFragment(args.skillTitle))
+        }
 
         binding.levelUpBackText.setOnClickListener {
             findNavController().popBackStack()

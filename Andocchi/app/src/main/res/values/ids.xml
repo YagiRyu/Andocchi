@@ -4,4 +4,5 @@
     <item name="nav_home" type="id" />
     <item name="nav_skill" type="id" />
     <item name="nav_memo" type="id" />
+    <item name="nav_code" type="id" />
 </resources>
