@@ -33,7 +33,7 @@ class ProfileViewModel @Inject constructor(private val repository: UserRepositor
 
     private fun setUserNameAndUserLevel() {
         viewModelScope.launch(Dispatchers.Default) {
-//            repository.deleteUserInfo(repository.fetchUserName()[0])
+            //repository.deleteUserInfo(repository.fetchUserName()[0])
 //            if (repository.fetchUserName().isEmpty()) {
 //                repository.insertUserInfo(USER)
 //            }

@@ -98,7 +98,6 @@ fun MemoEditScreen(skillTitle: String, navigation: () -> Unit) {
                     navigation()
                           },
                 enabled = enabled.value,
-                colors = ButtonDefaults.buttonColors(Color(R.drawable.is_jetpack_gradient_color))
             ) {
                 Text(text = "メモる", fontSize = 20.sp, fontWeight = FontWeight.Medium)
             }

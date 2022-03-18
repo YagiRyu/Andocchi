@@ -82,7 +82,7 @@ class SkillDialogFragment : DialogFragment() {
         return if (message in skillList) {
             AlertDialog.Builder(requireActivity())
                 .setTitle("スキルを取り消しますか？")
-                .setMessage(message)
+                .setMessage("取り消す")
                 .setPositiveButton("OK") {_, _ ->
                     viewModel.state.value = DialogState.OK(this@SkillDialogFragment)
                     viewModel.isContainSkill(message)
@@ -91,7 +91,7 @@ class SkillDialogFragment : DialogFragment() {
         } else {
             AlertDialog.Builder(requireActivity())
                 .setTitle(title)
-                .setMessage(message)
+                .setMessage("習得する")
                 .setPositiveButton("OK") {_, _ ->
                     viewModel.state.value = DialogState.OK(this@SkillDialogFragment)
                     viewModel.isContainSkill(message)
