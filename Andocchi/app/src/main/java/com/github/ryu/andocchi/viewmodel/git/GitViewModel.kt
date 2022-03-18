@@ -22,9 +22,9 @@ class GitViewModel @Inject constructor(private val repository: GithubRepository)
         fetchStarRanking("Kotlin")
     }
 
-    fun fetchStarRanking(language: String) =
+    private fun fetchStarRanking(language: String) =
         viewModelScope.launch {
-            repository.fetchStarRanking(language, "stars", "10").collect {
+            repository.getStarRanking(language, "stars", "10").collect {
                 _starRanking.value = it.body()!!
             }
         }
